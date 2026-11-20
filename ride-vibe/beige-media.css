@@ -1,0 +1,27 @@
+/* One shared beige stage for the feature and care photography.
+   Original supplied photographs remain unchanged; SVG viewports only control
+   their responsive framing and exclude unrelated products / poster captions. */
+:root { --ride-media-beige: #d7c4a6; }
+#top #product-story .ride-beige-media,
+#top #product-care .ride-beige-media {
+  display:block!important;
+  position:relative!important;
+  isolation:isolate;
+  overflow:hidden!important;
+  background:var(--ride-media-beige)!important;
+  background-image:none!important;
+}
+#top #product-story .ride-beige-media .ride-photo-viewport,
+#top #product-care .ride-beige-media .ride-photo-viewport {
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  transform:none!important;
+  background:transparent!important;
+}
