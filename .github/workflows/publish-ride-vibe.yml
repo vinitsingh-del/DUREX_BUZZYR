@@ -1,0 +1,46 @@
+name: Publish Ride and Vibe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-ride-vibe.yml'
+      - 'scripts/import_ride_vibe.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Copy the published Ride and Vibe website
+        run: python3 scripts/import_ride_vibe.py
+      - name: Save website files in the repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ride-vibe
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Ride and Vibe website files"
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
