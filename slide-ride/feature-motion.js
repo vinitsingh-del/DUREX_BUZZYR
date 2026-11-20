@@ -1,0 +1,1 @@
+(()=>{const number=document.getElementById('runtimeCountdown');if(!number||matchMedia('(prefers-reduced-motion: reduce)').matches)return;let step=0;setInterval(()=>{if(document.hidden)return;step=(step+1)%5;number.textContent=String(45-step)},1000)})();

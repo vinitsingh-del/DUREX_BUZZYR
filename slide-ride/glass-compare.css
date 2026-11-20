@@ -1,0 +1,46 @@
+/* Glass Compare: scoped replacement of the massager exploration section. */
+#comparison.vibe-compare{padding:19.2px clamp(16px,3.6vw,48px)!important;margin:0 0 19.2px!important;max-width:100%;min-width:0}
+#comparison .vibe-compare-panel{max-width:1120px;margin-inline:auto;padding:25.6px 24px 22.4px;border:1px solid rgba(215,180,255,.65);border-radius:30px;background:radial-gradient(ellipse at 0 100%,rgba(104,35,255,.65),transparent 48%),radial-gradient(ellipse at 100% 0,rgba(111,52,228,.5),transparent 46%),linear-gradient(125deg,rgba(33,13,70,.5),rgba(8,5,28,.72));box-shadow:inset 0 1px 0 rgba(255,255,255,.16);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);isolation:isolate;min-width:0}
+#comparison #vibeCompareTitle{font:800 clamp(32px,4vw,56px)/1.08 'One',Arial,sans-serif;text-align:center;letter-spacing:-.035em;margin:0 0 20.8px;color:#fff;overflow-wrap:normal}
+#comparison #vibeCompareTitle::after{content:'';display:block;width:116px;height:6px;background:#ffe22c;border-radius:3px;margin:14.4px auto 0}
+#comparison .vibe-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;min-width:0;outline-offset:5px}
+#comparison .vibe-card{min-width:0;padding:0 18px 4px;display:flex;flex-direction:column;position:relative}
+#comparison .vibe-card+.vibe-card{border-left:1px solid rgba(171,111,255,.27)}
+#comparison .vibe-media{height:clamp(210px,24vw,284px);display:flex;align-items:center;justify-content:center;min-width:0;margin-bottom:9.6px}
+#comparison .vibe-media img{width:100%;height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 12px 14px rgba(0,0,0,.2))}
+#comparison .vibe-media--buzzy{overflow:hidden}
+#comparison .vibe-media--buzzy img{width:auto;max-width:none;object-position:center bottom}
+#comparison .vibe-media--ring img{padding:18px 10px}
+#comparison .vibe-card h3{font:800 clamp(19px,2vw,28px)/1.15 'One',Arial,sans-serif;color:#fff;letter-spacing:-.035em;text-align:center;margin:0 0 12.8px;min-height:50px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+#comparison .vibe-card h3::after{content:'';display:block;width:48px;height:4px;border-radius:2px;background:#ffe22c;margin-top:8px;flex-shrink:0}
+#comparison .vibe-facts{list-style:none;display:grid;gap:8px;margin:0 0 9.6px;padding:0}
+#comparison .vibe-facts li{display:flex;align-items:center;gap:14px;min-height:57.6px;padding:8px 16px;border:1px solid rgba(172,118,255,.45);border-radius:16px;background:linear-gradient(115deg,rgba(255,255,255,.045),rgba(6,3,24,.26));color:#fff;font:400 clamp(14px,1.4vw,18px)/1.25 'Assist',Arial,sans-serif}
+#comparison .vibe-facts svg{color:#bd85ff;width:40px;height:40px;flex:0 0 40px}
+#comparison .vibe-link{min-height:44px;display:flex;align-items:center;justify-content:center;gap:14px;border-radius:40px;background:linear-gradient(105deg,#ffe62b,#ffda20);color:#120726;font:800 17px/1.2 'Assist',Arial,sans-serif;text-decoration:none;margin-top:auto;padding:8px 16px;transition:filter .2s}
+#comparison .vibe-link span{font-size:30px;line-height:.6}
+#comparison .vibe-link:hover{filter:brightness(1.08)}
+#comparison :is(.vibe-link,.vibe-dots button):focus-visible{outline:3px solid #b6ecff;outline-offset:4px}
+#comparison .vibe-dots{display:none}
+@media(max-width:700px){
+ #comparison.vibe-compare{padding:11.2px 14px!important;margin-bottom:12.8px!important}
+ #comparison .vibe-compare-panel{padding:20.8px 0 9.6px;border-radius:24px;background:radial-gradient(ellipse at 0 100%,rgba(104,35,255,.5),transparent 60%),linear-gradient(140deg,rgba(25,8,61,.58),rgba(8,5,28,.72));overflow:hidden}
+ #comparison #vibeCompareTitle{font-size:clamp(28px,8.2vw,36px);line-height:1.08;margin:0 auto 22.4px;padding-inline:20px;max-width:360px}
+ #comparison #vibeCompareTitle::after{width:76px;height:4px;margin-top:11.2px}
+ #comparison .vibe-rail{display:flex;gap:14px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:18px;padding:3px 18px 8px;scrollbar-width:none}
+ #comparison .vibe-rail::-webkit-scrollbar{display:none}
+ #comparison .vibe-card{flex:0 0 80%;padding:12.8px 12px 11.2px;border:1px solid rgba(196,150,255,.65);border-radius:22px;background:linear-gradient(145deg,rgba(144,75,255,.16),rgba(8,5,28,.36));scroll-snap-align:start;scroll-snap-stop:always}
+ #comparison .vibe-card+.vibe-card{border-left:1px solid rgba(196,150,255,.65)}
+ #comparison .vibe-media{height:clamp(154px,44vw,194px);margin-bottom:8px}
+ #comparison .vibe-media--ring img{padding:10px 4px}
+ #comparison .vibe-card h3{font-size:clamp(18px,5.4vw,23px);min-height:48px;margin-bottom:11.2px}
+ #comparison .vibe-card h3::after{width:36px;height:3px;margin-top:8px}
+ #comparison .vibe-facts{gap:8px;margin-bottom:9.6px}
+ #comparison .vibe-facts li{min-height:46.4px;padding:6px 10px;gap:10px;border-radius:12px;font-size:14px}
+ #comparison .vibe-facts svg{width:32px;height:32px;flex-basis:32px}
+ #comparison .vibe-link{min-height:44px;font-size:16px;padding:8px 10px}
+ #comparison .vibe-dots{display:flex;justify-content:center;margin-top:4px}
+ #comparison .vibe-dots button{width:36px;height:36px;padding:0;display:grid;place-items:center;border:0;background:transparent;border-radius:50%}
+ #comparison .vibe-dots span{width:11px;height:11px;border-radius:50%;background:rgba(178,143,240,.45)}
+ #comparison .vibe-dots .is-active span{background:#ffe22c}
+}
+@media(prefers-reduced-motion:reduce){#comparison .vibe-link{transition:none}}

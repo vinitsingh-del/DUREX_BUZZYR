@@ -1,0 +1,133 @@
+/* Frosted glass for the six surfaces identified in the supplied screenshots.
+   Material-only overrides: retain all existing layout and interaction rules. */
+:root {
+  --careful-glass-fill:
+    radial-gradient(ellipse at 0% 0%, rgba(255,255,255,.16), transparent 62%),
+    linear-gradient(118deg, rgba(255,255,255,.15) 0%, rgba(240,230,255,.08) 34%, rgba(255,255,255,.035) 57%, rgba(218,199,255,.11) 100%);
+  --careful-glass-edge: rgba(246,239,255,.36);
+  --careful-glass-depth: inset 0 1px 0 rgba(255,255,255,.48), inset 1px 0 0 rgba(255,255,255,.10), inset 0 -1px 0 rgba(255,255,255,.09), 0 12px 28px rgba(5,2,20,.20);
+}
+
+/* Keep the parent clear enough for the two inner glass surfaces to transmit
+   the animated page colour, rather than stacking opaque purple fills. */
+#specifications .specifications-shell {
+  background: rgba(232,219,255,.025) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+#specifications .feature-mode-panel,
+#specifications .walkthrough-facts,
+#reviews .review-card,
+#shop .product-detail-card .purchase-card,
+#shop .trust-assurance-card {
+  background: var(--careful-glass-fill) !important;
+  border-color: var(--careful-glass-edge) !important;
+  box-shadow: var(--careful-glass-depth) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(118%) brightness(1.10) !important;
+  backdrop-filter: blur(28px) saturate(118%) brightness(1.10) !important;
+}
+
+/* Nested quantity and button-map glass uses a lighter film, avoiding a second
+   expensive blur layer. The white purchase button and yellow tabs stay intact. */
+#shop .product-detail-card .purchase-card .qty,
+#specifications .feature-control-map {
+  background: linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.035)) !important;
+  border-color: rgba(246,239,255,.32) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.30), inset 0 -1px 0 rgba(255,255,255,.06) !important;
+}
+
+/* Quiet reflections keep the review copy clear while the page moves behind it. */
+#reviews .review-card::before {
+  content: none !important;
+  animation: none !important;
+}
+
+/* Preserve contrast on browsers without either backdrop-filter implementation. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  #specifications .feature-mode-panel,
+  #specifications .walkthrough-facts,
+  #reviews .review-card,
+  #shop .product-detail-card .purchase-card,
+  #shop .trust-assurance-card {
+    background: linear-gradient(135deg,rgba(55,37,91,.92),rgba(28,17,55,.94)) !important;
+  }
+}
+
+/* Follow-up reference: clearer frosted glass on mode information and care UI.
+   Reflections are painted into the surface, so they cannot cover the copy. */
+#specifications .feature-mode-panel,
+#specifications .walkthrough-facts,
+#product-care .care-detail,
+#product-care .care-thumbnail {
+  background:
+    radial-gradient(ellipse at 0% 0%,rgba(255,255,255,.20),transparent 58%),
+    linear-gradient(125deg,rgba(255,255,255,.16) 0%,rgba(242,235,255,.055) 31%,rgba(255,255,255,.015) 49%,rgba(236,226,255,.10) 100%),
+    rgba(13,9,29,.16) !important;
+  border-color:rgba(255,255,255,.42) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    inset 1px 0 0 rgba(255,255,255,.18),
+    inset -1px 0 0 rgba(255,255,255,.10),
+    inset 0 -1px 0 rgba(255,255,255,.14),
+    0 10px 24px rgba(5,2,18,.22) !important;
+  -webkit-backdrop-filter:blur(24px) saturate(85%) brightness(1.04) !important;
+  backdrop-filter:blur(24px) saturate(85%) brightness(1.04) !important;
+}
+
+/* The care description had its border removed by the older open-layout pass.
+   An inset edge supplies the glass rim without changing its box dimensions. */
+#product-care .care-detail {
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.34),inset 0 1px 0 rgba(255,255,255,.60),0 10px 24px rgba(5,2,18,.20) !important;
+}
+#product-care .care-thumbnail.is-active {
+  background:linear-gradient(125deg,rgba(255,255,255,.27),rgba(245,235,255,.07) 55%,rgba(226,212,255,.17)),rgba(13,9,29,.13) !important;
+  border-color:rgba(255,224,98,.82) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.64),inset 0 -2px 0 rgba(255,218,36,.65),0 8px 20px rgba(5,2,18,.18) !important;
+}
+#product-care .care-thumbnail::after {
+  content:none !important;
+  animation:none !important;
+}
+#product-care .care-controls button {
+  background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.04)),rgba(13,9,29,.18) !important;
+  border-color:rgba(255,255,255,.44) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 4px 10px rgba(5,2,18,.14) !important;
+  color:#fff !important;
+}
+#product-care .care-controls button:is(:hover,:focus-visible) {
+  background:rgba(255,218,36,.9) !important;
+  color:#06206d !important;
+}
+#product-care .care-thumbnail:not(.is-active):is(:hover,:focus-visible) {
+  border-color:rgba(255,255,255,.72) !important;
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))) {
+  #specifications .feature-mode-panel,
+  #specifications .walkthrough-facts,
+  #product-care .care-detail,
+  #product-care .care-thumbnail,
+  #product-care .care-thumbnail.is-active {
+    background:linear-gradient(125deg,rgba(69,51,105,.94),rgba(27,20,48,.94)) !important;
+  }
+}
+
+/* Keep the supplied square charging artwork intact inside the existing frame. */
+#product-care .care-visual--charge-art {
+  position:relative;
+}
+#product-care .care-visual--charge-art #careStoryImage {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+  padding:8px;
+  object-fit:contain;
+  object-position:center;
+}
+@media (max-width:700px) {
+  #product-care .care-visual--charge-art #careStoryImage {
+    padding:8px 8px 44px;
+  }
+}

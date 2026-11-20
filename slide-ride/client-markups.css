@@ -1,0 +1,40 @@
+/* Requested shopping CTA and mobile card corrections. */
+#top #addToCart,#stickyPurchaseBar #stickyAddToCart,#top #bundle .bundle-content button,#top .vibe-link,#top .buzzy-reel-add{background:#ffe22b!important;color:#171044!important;text-transform:uppercase!important;white-space:nowrap!important}
+#top #addToCart{font-size:20px!important}
+#stickyPurchaseBar .sticky-product-copy>strong{display:none!important}
+#stickyPurchaseBar{grid-template-columns:auto 112px minmax(176px,1fr)!important;max-width:570px!important}
+#stickyPurchaseBar #stickyAddToCart{font-size:15px!important}
+#how-to-use .how-demo-tab{border-color:#b6ecff!important;color:#d5f4ff!important}
+#how-to-use .how-demo-tab.is-active{background:#b6ecff!important;color:#171044!important;border-color:#b6ecff!important}
+#how-to-use .how-demo-tab.is-active>span{color:#171044!important}
+@media(max-width:700px){
+ #top #addToCart{font-size:18px!important}
+ #stickyPurchaseBar{width:calc(100% - 16px)!important;grid-template-columns:minmax(78px,1fr) 76px minmax(116px,1.3fr)!important;gap:6px!important;padding:8px!important}
+ #stickyPurchaseBar .sticky-product-copy{display:block!important}
+ #stickyPurchaseBar .sticky-product-copy span{font-size:13px!important;white-space:normal!important}
+ #stickyPurchaseBar .sticky-product-copy del{font-size:9px!important;margin-left:2px!important;white-space:nowrap}
+ #stickyPurchaseBar .sticky-qty{grid-template-columns:24px 1fr 24px!important;min-height:42px!important}
+ #stickyPurchaseBar #stickyAddToCart{min-width:0!important;width:100%!important;padding:8px 5px!important;font-size:12px!important;min-height:42px!important}
+ #top #comparison .vibe-rail{gap:10px!important;padding:3px 0 8px!important;scroll-padding-inline:0!important}
+ #top #comparison .vibe-card{flex:0 0 calc((100% - 10px)/2)!important;width:calc((100% - 10px)/2)!important;box-sizing:border-box;padding:10px 8px!important}
+ #top #comparison .vibe-media{height:145px!important}
+ #top #comparison .vibe-media img{max-width:100%!important;object-fit:contain!important}
+ #top #comparison .vibe-card h3{font-size:15px!important;min-height:38px!important}
+ #top #comparison .vibe-facts{gap:6px!important}
+ #top #comparison .vibe-facts li{padding:7px 5px!important;gap:5px!important;font-size:11px!important}
+ #top #comparison .vibe-facts svg{width:19px!important;height:19px!important;flex-shrink:0}
+ #top #comparison .vibe-link{font-size:11px!important;padding:11px 4px!important;gap:4px!important}
+ #top #bundle .bundle-media{display:block!important;height:164px!important;min-height:164px!important;padding:10px!important}
+ #top #bundle .bundle-media img{height:144px!important;max-height:144px!important;min-height:0!important;width:100%!important;object-fit:contain!important}
+}
+
+/* One row height for reviews, with room to grow at larger text sizes. */
+#top #reviews .review-track,#top #reviews .review-group{align-items:stretch!important}
+#top #reviews .review-group>.review-card{align-self:stretch!important;box-sizing:border-box;min-height:200px!important;height:auto!important;max-height:none!important}
+
+/* FAQ heading: full-width, balanced typography instead of the narrow split column. */
+#top #review-center .faq-shell-custom{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:20px!important;min-width:0}
+#top #review-center .section-heading-block{width:100%!important;max-width:none!important;min-width:0;margin:0!important;text-align:center!important}
+#top #review-center .section-heading-block h2{width:100%!important;max-width:none!important;margin:0 auto!important;font-size:clamp(28px,3.2vw,44px)!important;line-height:1.15!important;letter-spacing:-.025em!important;word-break:normal!important;overflow-wrap:normal!important;hyphens:none!important;text-wrap:balance}
+#top #review-center .faq-list{width:100%;min-width:0}
+@media(max-width:767px){#top #review-center .section-heading-block h2{font-size:clamp(24px,6.2vw,30px)!important}#top #review-center .faq-shell-custom{gap:18px!important}}

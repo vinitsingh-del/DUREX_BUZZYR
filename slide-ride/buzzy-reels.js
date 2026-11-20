@@ -1,0 +1,22 @@
+(()=>{
+ const root=document.querySelector('#loved .buzzy-reels-stage');if(!root)return;
+ const cards=[...root.querySelectorAll('.buzzy-reel')];let active=0,inView=false,startX=0,startY=0;
+ const prev=root.querySelector('.prev'),next=root.querySelector('.next');
+ prev.hidden=next.hidden=cards.length<2;
+ const play=(card)=>{const v=card.querySelector('video');if(!v.src){v.src=v.dataset.src;v.load()}v.play().catch(()=>{});};
+ const render=()=>cards.forEach((card,i)=>{let d=(i-active+cards.length)%cards.length;if(d>cards.length/2)d-=cards.length;card.dataset.pos=Math.abs(d)>2?'hidden':String(d);card.inert=d!==0;card.setAttribute('aria-hidden',String(d!==0));const v=card.querySelector('video');if(d===0&&inView&&!card.dataset.paused)play(card);else v.pause();});
+ const move=(step)=>{active=(active+step+cards.length)%cards.length;render()};
+ prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+ root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(e.key==='ArrowLeft'?-1:1)}});
+ root.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY},{passive:true});
+ root.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))move(dx<0?1:-1)},{passive:true});
+ cards.forEach(card=>{const v=card.querySelector('video'),toggle=card.querySelector('.buzzy-reel-toggle'),sound=card.querySelector('.buzzy-reel-sound');v.muted=true;
+ toggle.addEventListener('click',()=>{if(v.paused){delete card.dataset.paused;play(card)}else{card.dataset.paused='true';v.pause()}});
+ v.addEventListener('play',()=>{card.classList.add('is-playing');toggle.textContent='Ⅱ';toggle.setAttribute('aria-label','Pause reel')});
+ v.addEventListener('pause',()=>{card.classList.remove('is-playing');toggle.textContent='▶';toggle.setAttribute('aria-label','Play reel')});
+ sound.addEventListener('click',()=>{v.muted=!v.muted;sound.textContent=v.muted?'Sound off':'Sound on';sound.setAttribute('aria-label',v.muted?'Unmute reel':'Mute reel');sound.setAttribute('aria-pressed',String(!v.muted))});
+ card.querySelector('button.buzzy-reel-add')?.addEventListener('click',()=>document.querySelector('#addToCart')?.click());
+ });
+ if('IntersectionObserver'in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;render()},{threshold:.2}).observe(root);
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)cards.forEach(c=>c.querySelector('video').pause());else render()});render();
+})();

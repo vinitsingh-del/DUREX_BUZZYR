@@ -1,0 +1,12 @@
+/* Approved Option 2: violet glass and coordinated beige photography. */
+#product-care .care-routine-card,#product-care .care-routine-card.is-selected{padding:12px;border-radius:22px;background:linear-gradient(135deg,rgba(173,132,255,.23),rgba(94,55,213,.16))!important;border:1px solid rgba(220,199,255,.65)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)!important;backdrop-filter:blur(22px)}
+#product-care .care-routine-photo{aspect-ratio:317/219;border-radius:14px;background-color:#e9ddc9;background-size:cover;background-position:center;object-fit:cover;height:auto}
+#product-care .care-routine-photo--wash{background-image:url('assets/slide-ride/wash.png')}
+#product-care .care-routine-photo--store{background-image:url('assets/slide-ride/wash.png')}
+#product-care .care-routine-photo--recharge{background-image:url('assets/slide-ride/wash.png')}
+#product-care .care-routine-copy{padding:14px 3px 8px;gap:8px}
+#product-care .care-routine-label b,#product-care .care-routine-card.is-selected .care-routine-label b{color:#d9baff}
+#product-care .care-routine-label span,#product-care .care-routine-card.is-selected .care-routine-label span{color:#ddd0ff;font-weight:400}
+#product-care .care-routine-description{color:#fff}
+#product-care .care-routine-footer p{display:none}
+@media(max-width:700px){#product-care .care-routine-card{padding:10px;border-radius:18px}#product-care .care-routine-photo{aspect-ratio:317/219;border-radius:12px}#product-care .care-routine-copy{padding:12px 3px 8px}#product-care .care-routine-title{font-size:19px}#product-care .care-routine-description{font-size:14px;line-height:1.4}#product-care .care-routine-label{font-size:11px}#product-care .care-routine-label b{font-size:16px}}

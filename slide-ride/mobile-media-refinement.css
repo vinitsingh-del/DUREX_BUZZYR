@@ -1,0 +1,20 @@
+/* Mobile-only media framing and review density. */
+@media(max-width:700px){
+ #top #shop .main-media-card{isolation:isolate;position:relative;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:1/1!important}
+ #top #shop .main-media-card::before{content:none!important;display:none!important}
+ #top #shop .main-media-card :is(#heroVideo,#mainImage){width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;padding:0!important;margin:0!important;object-fit:cover!important;object-position:50% 50%!important;transform:none!important;animation:none!important;background:transparent!important;border:0!important;border-radius:0!important;position:absolute!important;inset:0!important}
+ #top #shop .main-media-card :is(#heroVideo,#mainImage)[hidden]{display:none!important}
+ #top #reviews :is(.review-track,.review-group){align-items:flex-start!important}
+ #top #reviews .review-card{height:auto!important;min-height:0!important;max-height:none!important;justify-content:flex-start!important;gap:8px!important;padding:12px 14px!important}
+ #top #reviews .review-card blockquote{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important;margin:0!important}
+ #top #reviews .review-card .review-footer{margin-top:2px!important}
+}
+
+/* Reserve first-screen space for the native purchase row on short phones. */
+@media(max-width:700px){
+ #top #shop .main-media-card{width:100%!important;max-width:100%!important;max-height:max(200px,calc(100svh - 390px))!important;margin-inline:auto!important}
+ #top #shop .product-rating,#top #shop .product-price-block{margin-top:4px!important}
+ #top #shop .prepaid-offer{margin-block:4px!important}
+ #top #shop .product-detail-card .purchase-card{margin-top:4px!important;width:100%;max-width:100%;box-sizing:border-box;scroll-margin-block:100px 20px}
+ #top #shop .purchase-card .primary-cta{min-width:0;white-space:nowrap}
+}

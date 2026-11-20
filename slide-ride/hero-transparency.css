@@ -1,0 +1,32 @@
+/* Preserve every hero dimension; show the page through the transparent video. */
+#shop .transparent-hero-media:has(#heroVideo:not([hidden])) {
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+#shop #heroVideo {background:transparent!important;}
+
+/* Gallery selectors: 70% of their preceding square dimensions. */
+#shop .thumb-grid{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}
+#shop .thumb-grid::-webkit-scrollbar{display:none}
+#shop .thumb-grid .thumb{flex:0 0 calc((100% - 36px)*.175);min-width:0;scroll-snap-align:start}
+#shop .hero-video-label{position:absolute;right:5px;bottom:5px;padding:3px 6px;border-radius:12px;background:rgba(10,6,35,.72);color:#fff;font:700 10px/1.2 'Assist',sans-serif}
+@media(max-width:1000px){#shop .thumb-grid .thumb{flex-basis:calc((100% - 24px)*.175)}}
+@media(max-width:700px){#shop .thumb-grid .thumb{flex-basis:calc((100% - 18px)*.175)}}
+@media(max-width:430px){#shop .thumb-grid .thumb{flex-basis:calc((100% - 15px)*.175)}}
+
+#shop .thumb-grid .thumb{border-radius:12px}
+
+/* Show every part of the added photographs in the smaller square selectors. */
+#shop .thumb-grid .thumb-photo img{object-fit:cover;object-position:center}
+
+/* Uploaded cutouts use the same unframed stage as the first hero video. */
+#shop .transparent-hero-media:has(#mainImage.hero-cutout:not([hidden])){
+ background:transparent!important;border-color:transparent!important;box-shadow:none!important;
+ -webkit-backdrop-filter:none!important;backdrop-filter:none!important;border-radius:0;
+}
+#shop #mainImage.hero-cutout{background:transparent;border-radius:0;object-fit:contain;transform-origin:center;animation:hero-cutout-zoom 4s ease-out both}
+@keyframes hero-cutout-zoom{from{transform:scale(.9)}to{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){#shop #mainImage.hero-cutout{animation:none;transform:none}}

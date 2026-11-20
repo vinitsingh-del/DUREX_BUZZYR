@@ -1,0 +1,15 @@
+/* Desktop-only review and paired-product sizing. */
+@media (min-width:1024px){
+ #top #reviews .review-track,#top #reviews .review-group{align-items:flex-start!important}
+ #top #reviews .review-card{height:auto!important;min-height:0!important;max-height:none!important;justify-content:flex-start!important;gap:8px!important;padding:14px 16px!important}
+ #top #reviews .review-card blockquote{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important;margin:0!important}
+ #top #reviews .review-footer{margin-top:2px!important}
+ #top #bundle .bundle-viewport{max-width:484px!important}
+ #top #bundle .bundle-card{border-radius:20px!important}
+ #top #bundle .bundle-media{display:block!important;height:170px!important;min-height:0!important;padding:12px!important;aspect-ratio:auto!important}
+ #top #bundle .bundle-media img{display:block!important;width:100%!important;height:146px!important;min-height:0!important;max-height:146px!important;object-fit:contain!important;object-position:center!important;transform:none!important}
+ #top #bundle .bundle-content{min-height:0!important;padding:12px!important;gap:8px!important}
+ #top #bundle .bundle-content h3{min-height:38px!important;margin:0!important;font-size:14px!important;line-height:1.35!important}
+ #top #bundle .bundle-content p{margin:0!important}
+ #top #bundle .bundle-content button{min-height:38px!important}
+}

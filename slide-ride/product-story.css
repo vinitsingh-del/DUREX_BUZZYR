@@ -1,0 +1,74 @@
+/* Reference-matched story rail; isolated from older card and section rules. */
+#product-story{width:100%;min-width:0;padding:0 clamp(14px,3.6vw,48px);margin:0 0 24px;scroll-margin-top:100px}
+#product-story .story-shell{width:100%;max-width:1280px;margin:auto;min-width:0;overflow:hidden;border:1px solid rgba(206,151,255,.55);border-radius:26px;background:radial-gradient(ellipse at 93% 0,rgba(173,0,178,.66),transparent 68%),linear-gradient(118deg,rgba(62,7,220,.94),rgba(87,16,210,.78) 50%,rgba(31,0,71,.94));isolation:isolate}
+#product-story .story-heading{position:relative;padding:36px 38px 28px}
+#product-story .story-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;font:400 10px/1.4 'Assist',sans-serif;letter-spacing:2.5px;color:#ccbfff}
+#product-story .story-eyebrow span{color:#ffe500}
+#product-story h2{max-width:850px;margin:0 0 14px;font:800 clamp(34px,4.5vw,56px)/1.04 'One',sans-serif;letter-spacing:-.035em;color:#fff;text-align:left;text-wrap:balance}
+#product-story .story-description{margin:0;padding-right:120px;color:#d2c1ed;font:400 15px/1.45 'Assist',sans-serif}
+#product-story .story-arrows{display:flex;gap:10px;flex-shrink:0}
+#product-story .story-heading>.story-arrows{position:absolute;right:38px;bottom:26px}
+#product-story .story-arrows button{display:grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid rgba(238,211,255,.5);border-radius:50%;background:rgba(255,255,255,.12);color:#e2cbed;font:400 25px/1 Arial,sans-serif;transition:background .2s,opacity .2s}
+#product-story .story-arrows button:last-child{background:#ffe500;border-color:#ffe500;color:#19103a}
+#product-story .story-arrows button:disabled{opacity:.5;cursor:default}
+#product-story :is(button,.story-rail):focus-visible{outline:3px solid #b6ecff;outline-offset:-4px}
+#product-story .story-rail{display:flex;align-items:stretch;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;min-width:0;padding:0 0 1px;scroll-padding-inline:0}
+#product-story .story-rail::-webkit-scrollbar{display:none}
+#product-story .story-card{flex:0 0 calc((100% - 54px)/3.9);min-width:0;scroll-snap-align:start;scroll-snap-stop:always;border:1px solid rgba(224,196,255,.57);border-radius:22px;padding:11px 11px 28px;overflow:hidden;background:linear-gradient(130deg,rgba(255,255,255,.19),rgba(255,255,255,.07));box-shadow:inset 0 1px 0 rgba(255,255,255,.25);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+#product-story .story-card img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:15px}
+#product-story .story-card-copy{padding:14px 8px 16px}
+#product-story .story-number{display:block;color:#ffe500;font:800 15px/1.2 'One',sans-serif;margin-bottom:12px}
+#product-story .story-card h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;margin:0 0 7px;font:800 clamp(14px,1.45vw,20px)/1.15 'One',sans-serif;letter-spacing:-.025em;text-transform:uppercase;color:#fff}
+#product-story .story-card h3 strong{font-size:1.28em;font-weight:800}
+#product-story .story-card p{margin:0;font:400 13px/1.4 'Assist',sans-serif;color:#d6c8f3}
+#product-story .story-footer{display:flex;align-items:center;gap:20px;padding:22px 38px;border-top:1px solid rgba(228,198,255,.12)}
+#product-story .story-count{flex:none;font:400 10px/1 'Assist',sans-serif;letter-spacing:1px;color:#d3bfff}
+#product-story .story-progress{height:3px;flex:1;min-width:24px;border-radius:4px;background:rgba(226,186,255,.32);overflow:hidden}
+#product-story .story-progress>span{display:block;height:100%;width:25%;border-radius:inherit;background:#ffe500;transition:width .2s ease}
+#product-story .story-hint{font:400 9px/1.2 'Assist',sans-serif;letter-spacing:1.5px;color:#dbc4f7;white-space:nowrap}
+@media(max-width:1000px) and (min-width:701px){#product-story .story-card{flex-basis:calc((100% - 36px)/2.8)}}
+@media(max-width:700px){
+ #product-story{padding-inline:14px;margin-bottom:18px}
+ #product-story .story-shell{border-radius:24px}
+ #product-story .story-heading{padding:26px 22px 28px}
+ #product-story .story-eyebrow{font-size:7px;letter-spacing:1.6px;margin-bottom:14px;gap:8px}
+ #product-story h2{font-size:clamp(27px,7.5vw,36px);line-height:1.04;margin-bottom:14px;letter-spacing:-.04em}
+ #product-story .story-description{padding:0;font-size:13px;line-height:1.4}
+ #product-story .story-heading>.story-arrows{display:none}
+ #product-story .story-rail{gap:13px}
+ #product-story .story-card{flex-basis:72%;padding:10px 10px 20px;border-radius:20px}
+ #product-story .story-card img{border-radius:14px}
+ #product-story .story-card-copy{padding:14px 8px 16px}
+ #product-story .story-number{font-size:14px;margin-bottom:12px}
+ #product-story .story-card h3{font-size:clamp(13px,3.8vw,17px);gap:3px}
+ #product-story .story-card p{font-size:12px}
+ #product-story .story-footer{padding:15px 18px;gap:12px}
+ #product-story .story-count{font-size:9px}
+ #product-story .story-hint{display:none}
+ #product-story .story-arrows{gap:8px}
+ #product-story .story-arrows button{width:38px;height:38px;font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){#product-story .story-progress>span,#product-story button{transition:none}}
+
+/* Compact story section: preserve complete square artwork and horizontal browsing. */
+#product-story .story-shell{max-width:1120px}
+#product-story .story-heading{padding:24px 30px 20px}
+#product-story .story-eyebrow{margin-bottom:12px}
+#product-story h2{font-size:clamp(29px,3.6vw,45px);margin-bottom:10px}
+#product-story .story-heading>.story-arrows{right:30px;bottom:20px}
+#product-story .story-card{padding-bottom:16px}
+#product-story .story-card-copy{padding-block:10px 8px}
+#product-story .story-number{margin-bottom:8px}
+#product-story .story-footer{padding-block:14px}
+@media(max-width:700px){
+ #product-story .story-heading{padding:18px 18px 18px}
+ #product-story .story-eyebrow{margin-bottom:10px}
+ #product-story h2{font-size:clamp(24px,6vw,29px);margin-bottom:10px}
+ #product-story .story-description{font-size:12px}
+ #product-story .story-card{flex-basis:64%;padding:8px 8px 12px}
+ #product-story .story-card-copy{padding:10px 6px 8px}
+ #product-story .story-number{font-size:12px;margin-bottom:8px}
+ #product-story .story-card h3{font-size:clamp(12px,3.2vw,14px);margin-bottom:5px}
+ #product-story .story-card p{font-size:11px}
+ #product-story .story-footer{padding-block:10px}
+}
