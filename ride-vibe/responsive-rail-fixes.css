@@ -1,0 +1,27 @@
+/* Four feature facts in a single swipeable row, on phones only. */
+@media(max-width:760px){
+ #specifications .mode-showcase-facts{
+  display:flex;flex-wrap:nowrap;gap:0;width:100%;min-width:0;max-width:100%;
+  overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;
+  padding:10px 0 6px;scrollbar-width:thin;scrollbar-color:rgba(196,160,245,.55) transparent;
+ }
+ #specifications .mode-showcase-facts .mode-fact{
+  flex:0 0 50%;min-width:155px;box-sizing:border-box;align-items:center;
+  padding:0 12px;scroll-snap-align:start;border-left:1px solid rgba(196,160,245,.35);
+ }
+ #specifications .mode-showcase-facts .mode-fact:first-child{border-left:0;padding-left:0}
+}
+/* Keep the media and details above one full-width desktop selector row. */
+@media(min-width:1024px){
+ #shop .hero-shell{row-gap:12px}
+ #shop .hero-left{display:contents}
+ #shop .main-media-card{grid-column:1;grid-row:1}
+ #shop .hero-right.product-detail-card{grid-column:2;grid-row:1}
+ #shop .thumb-grid{
+  grid-column:1 / -1;grid-row:2;width:100%;max-width:none;margin:0;
+  justify-content:space-between;gap:12px;padding:3px;box-sizing:border-box;
+ }
+ #shop .thumb-grid .thumb{
+  flex:0 0 calc(((100% - clamp(28px,3vw,48px)) / 2 - 36px) * .175);
+ }
+}

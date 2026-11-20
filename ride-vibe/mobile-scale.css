@@ -1,0 +1,208 @@
+/* Mobile-only containment. Desktop begins unchanged at 431px. */
+@media (max-width: 430px) {
+  :root { --gutter: clamp(10px, 3vw, 13px); }
+
+  html { font-size: 16px; }
+  html,
+  body,
+  main { width: 100%; max-width: 100%; overflow-x: clip; }
+
+  main > .section-pad {
+    padding-inline: var(--gutter);
+    margin-bottom: 9px;
+  }
+  main > .section-pad > .shell {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .card-shell { padding: clamp(12px, 3.3vw, 14px); border-radius: clamp(18px, 5vw, 22px); }
+  .section-heading-block { gap: 6px; margin-bottom: 11px; }
+  .section-heading-block h2,
+  #reviews .review-heading h2,
+  #how-to-use .how-use-intro h2,
+  #features .section-heading-block h2,
+  #specifications .specifications-heading h2,
+  #bundle .section-heading-block h2,
+  #comparison .section-heading-block h2,
+  #review-center .section-heading-block h2 {
+    font-size: clamp(25px, 7.2vw, 29px);
+    line-height: .98;
+  }
+
+  /* Hero and product details stay inside a composed phone column. */
+  .hero-shell { width: 90%; max-width: 100%; gap: 8px; }
+  .hero-left { display: grid; justify-items: center; width: 100%; }
+  .main-media-card,
+  .thumb-grid { width: 100%; max-width: 360px; }
+  .main-media-card { aspect-ratio: 1; max-height: 360px; border-radius: clamp(18px, 5.4vw, 23px); }
+  .thumb-grid { gap: 5px; margin-top: 5px; }
+  .thumb { border-radius: 10px; }
+  .media-chip { top: 10px; left: 10px; padding: 6px 8px; font-size: 9px; }
+
+  .hero-right.product-detail-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 10px;
+    margin-inline: auto;
+  }
+  .product-title-row { min-width: 0; padding-right: 36px; }
+  .product-title-row h1 {
+    max-width: 100%;
+    font-size: clamp(20px, 5.6vw, 23px);
+    line-height: 1.04;
+    white-space: normal;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+  }
+  .product-share { width: 31px; height: 31px; }
+  .product-share svg { width: 16px; height: 16px; }
+  .product-rating { gap: 6px; margin-top: 8px; }
+  .product-stars { font-size: 15px; }
+  .product-price-block { margin-top: 9px; }
+  .product-detail-card .price-row { flex-wrap: nowrap; gap: 6px; }
+  .product-detail-card .price { font-size: clamp(21px, 5.9vw, 24px); }
+  .product-detail-card .discount { flex: none; padding: 4px 6px; font-size: 8.5px; }
+  .tax-copy { gap: 3px; margin-top: 6px; font-size: 10.5px; }
+  .price-row .tax-copy { min-width: 0; margin-top: 0; font-size: clamp(8.5px, 2.55vw, 10px); }
+  .trusted-strip { margin-top: 9px; padding: 5px 6px; }
+  .trust-assurance-card { margin-top: 8px; padding: 8px 5px; }
+  .assurance-icon { width: 29px; height: 29px; }
+  .product-detail-card .purchase-card { grid-template-columns: 108px minmax(0, 1fr); gap: 7px; margin-top: 8px; padding: 8px; }
+  .product-detail-card .qty { grid-template-columns: 31px 1fr 31px; min-height: 44px; }
+  .product-detail-card .qty button { font-size: 22px; }
+  .product-detail-card .qty span { font-size: 15px; }
+  .product-detail-card .primary-cta { min-height: 36px; }
+
+  /* Reviews and usage cards use shorter, narrower phone rails. */
+  #reviews .customer-review-shell { padding-block: 12px!important; }
+  #reviews .review-heading { gap: 7px; margin-bottom: 10px; }
+  #reviews .review-source { max-width: 100%; font-size: 10px; line-height: 1.35; }
+  #reviews .review-card {
+    width: min(216px, 72vw)!important;
+    flex-basis: min(216px, 72vw)!important;
+    height: 104px!important;
+    padding: 10px 12px!important;
+    border-radius: 16px!important;
+  }
+
+  #how-to-use .how-use-shell {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(12px, 3.3vw, 14px);
+    overflow: hidden;
+  }
+  #how-to-use .how-use-intro { gap: 6px; margin-bottom: 11px; }
+  #how-to-use .how-use-intro > p:last-child { font-size: 12.5px; line-height: 1.45; }
+  #how-to-use .how-use-grid {
+    width: 100%;
+    max-width: 100%;
+    grid-auto-columns: 80%;
+    gap: 8px;
+    padding: 0 0 8px;
+    scroll-padding-inline: 0;
+  }
+  #how-to-use .how-card { border-radius: 18px; }
+  #how-to-use .how-media,
+  #how-to-use .how-media .step-product-image { min-height: 140px; height: 140px; }
+  #how-to-use .how-index { top: 9px; left: 9px; width: 31px; height: 31px; font-size: 11px; }
+  #how-to-use .how-copy { gap: 5px; padding: 11px 12px 13px; }
+  #how-to-use .how-copy h3 { font-size: 19px; }
+  #how-to-use .how-copy p { font-size: 12px; line-height: 1.38; }
+
+  #product-care .product-care-shell { padding: 12px; }
+  #product-care .product-care-heading { gap: 6px; margin-bottom: 11px; }
+  #product-care .product-care-heading h2 { font-size: clamp(25px, 7.2vw, 29px); line-height: .98; }
+  #product-care .product-care-heading > p:last-child { font-size: 12px; line-height: 1.42; }
+  #product-care .product-care-grid { gap: 8px; padding-bottom: 7px; }
+  #product-care .product-care-card { flex-basis: 84%; border-radius: 18px; }
+  #product-care .product-care-media { aspect-ratio: 16 / 9; }
+  #product-care .product-care-copy { min-height: 146px; padding: 12px; }
+  #product-care .product-care-copy span { font-size: 9px; }
+  #product-care .product-care-copy h3 { margin: 6px 0 7px; font-size: 18px; }
+  #product-care .product-care-copy p { font-size: 11.5px; line-height: 1.42; }
+
+  #indulge .bold-shell { gap: 12px; }
+  #indulge .bold-copy h2 { font-size: clamp(27px, 8vw, 32px); }
+  #indulge .bold-gallery { grid-auto-columns: 76%; gap: 8px; }
+  #indulge .bold-gallery-item { border-radius: 17px; }
+
+  /* Feature and specification media no longer dominate a phone viewport. */
+  #features .feature-shell { width: 88%; padding: 11px 9px; }
+  #features .feature-layout { gap: 8px; }
+  #features .feature-motion-card { width: min(100%, 280px); min-height: 215px; }
+  #features .feature-card-carousel { width: 100%; padding-inline: 27px; }
+  #features .feature-card { min-height: 68px; padding: 7px 8px; }
+  #features .feature-card h3 { font-size: 13px; }
+  #features .feature-card p { font-size: 10.5px; }
+  #features .feature-arrow { width: 24px; height: 24px; font-size: 15px; }
+
+  #specifications .specifications-shell {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    padding: 20px 12px 24px;
+    overflow: hidden;
+  }
+  #specifications .specifications-heading { margin-bottom: 14px; }
+  #specifications .spec-composition { gap: 0; }
+  #specifications .spec-stage { height: clamp(200px, 55vw, 228px); }
+  #specifications .spec-stage::before { width: min(215px, 58vw); }
+  #specifications .spec-stage img { height: clamp(280px, 78vw, 320px); }
+  #specifications .spec-details { margin-top: 20px; }
+  #specifications .spec-metrics { min-height: 92px; padding-block: 11px; }
+  #specifications .spec-metric { padding-inline: 11px; }
+  #specifications .spec-metric span { font-size: clamp(9px, 2.4vw, 10.5px); }
+  #specifications .spec-metric b { margin-top: 8px; font-size: clamp(42px, 12vw, 48px); }
+  #specifications .spec-facts-grid {
+    grid-auto-rows: minmax(72px, auto);
+    gap: 18px 11px;
+    margin-top: 26px;
+  }
+  #specifications .spec-fact { gap: 8px; padding-top: 8px; }
+  #specifications .spec-fact span { font-size: clamp(9px, 2.45vw, 10.5px); }
+  #specifications .spec-fact b { font-size: clamp(13px, 3.5vw, 15px); }
+
+  /* Horizontal commerce rails retain their orientation in smaller frames. */
+  #bundle .bundle-shell,
+  #loved .community-reels-shell { width: 84%; }
+  #bundle .section-heading-block > p:last-child { font-size: 12px; }
+  #bundle .bundle-viewport { width: min(calc(100% - 40px), 226px); }
+  #bundle .bundle-content { min-height: 94px; padding: 9px; }
+  #bundle .bundle-content h3 { font-size: 13px; }
+  #bundle .bundle-content button { min-height: 34px; }
+  #loved .community-reels-heading h2 { font-size: clamp(24px, 7vw, 28px); }
+  #loved .community-reels-subtitle { font-size: 11px; }
+  #loved .community-reel-viewport { width: min(calc(100% - 40px), 194px); }
+
+  #comparison .massager-explore-shell { width: 100%; padding: 12px; }
+  #comparison .massager-explore-heading { gap: 6px; margin-bottom: 11px; }
+  #comparison .massager-explore-heading > p:last-child { font-size: 12px; line-height: 1.42; }
+  #comparison .massager-explore-grid { gap: 8px; padding-bottom: 7px; }
+  #comparison .massager-explore-card { flex-basis: 80%; border-radius: 17px; }
+  #comparison .massager-explore-media { height: clamp(178px, 58vw, 220px); padding: 31px 17px 12px; }
+  #comparison .massager-match-pill { top: 9px; left: 9px; padding: 5px 8px; font-size: 8px; }
+  #comparison .massager-explore-copy { padding: 11px; }
+  #comparison .massager-explore-copy > span { font-size: 8px; }
+  #comparison .massager-explore-copy h3 { margin: 6px 0 7px; font-size: 17px; }
+  #comparison .massager-explore-copy p { font-size: 11px; line-height: 1.4; }
+  #comparison .massager-explore-copy b { padding-top: 11px; font-size: 11px; }
+
+  #review-center .faq-list { gap: 8px; }
+  #review-center .faq-list details { padding: 0 13px; border-radius: 15px; }
+  #review-center .faq-list summary { min-height: 50px; gap: 10px; font-size: 14px; line-height: 1.25; }
+  #review-center .faq-list summary::after { flex-basis: 28px; width: 28px; height: 28px; font-size: 17px; }
+  #review-center .faq-list p { padding: 0 38px 13px 0; font-size: 12.5px; line-height: 1.48; }
+
+  .sticky-purchase-bar {
+    width: min(380px, calc(100% - 30px));
+    grid-template-columns: minmax(0, 1fr) 74px 96px;
+    gap: 5px;
+    padding: 7px 7px 7px 10px;
+  }
+  .sticky-qty { grid-template-columns: 23px 1fr 23px; min-height: 38px; }
+  .sticky-qty button { font-size: 18px; }
+  .sticky-qty span { font-size: 12px; }
+  .sticky-purchase-bar #stickyAddToCart { min-width: 96px; min-height: 38px; }
+}

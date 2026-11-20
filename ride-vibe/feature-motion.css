@@ -1,0 +1,12 @@
+#product-story .usp-photo--dual,#product-story .usp-photo--runtime{position:relative;overflow:hidden}
+#product-story .feature-motion{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#product-story .action-dot{fill:#55e6ef;stroke:#e3ffff;stroke-width:1;animation:action-blink 1.4s ease-in-out infinite}
+#product-story .action-dot--second{animation-delay:.7s}
+#product-story .clock-hand{transform-origin:282px 88px;animation:clock-tick 5s steps(5,end) infinite}
+#product-story .runtime-motion text{font-family:inherit}
+@keyframes action-blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes clock-tick{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#product-story .action-dot,#product-story .clock-hand{animation:none}}
+
+/* Override legacy 64px icon sizing; retain the original image-relative position. */
+#product-story .usp-symbol svg.runtime-motion{width:100%;height:100%;max-width:none;max-height:none;inset:0;z-index:1}

@@ -1,0 +1,50 @@
+/* Tight, centred desktop gallery; selector dimensions stay unchanged. */
+@media(min-width:1024px){
+ #shop .thumb-grid{justify-content:center;gap:10px}
+}
+/* Reels: 115% of the previous 230px desktop / 207px mobile widths. */
+#loved .buzzy-reels-shell{max-width:1190.25px}
+#loved .buzzy-reels-stage{--reel-width:264.5px;height:calc(var(--reel-width) * 4 / 3 + 5.29px)}
+#loved .buzzy-reel{grid-template-rows:minmax(0,1fr) 111.09px;border-radius:31.74px}
+#loved .buzzy-reel-product{height:111.09px;padding:10.58px;gap:6.6125px;grid-template-columns:37.03px minmax(0,1fr) 50.255px}
+#loved .buzzy-reel-product img{width:37.03px;height:55.545px}
+#loved .buzzy-reel-product strong{font-size:11.9025px}
+#loved .buzzy-reel-product p{font-size:17.1925px}
+#loved .buzzy-reel-product s{font-size:11.9025px}
+#loved .buzzy-reel-product span{font-size:13.225px}
+#loved .buzzy-reel-add{font-size:13.225px;height:44.965px}
+#loved .buzzy-reels-heading h2{font-size:clamp(39.675px,4.62875vw,58.19px)}
+#loved .buzzy-reels-heading>p:last-child{font-size:clamp(21.16px,2.645vw,29.095px)}
+#loved .buzzy-reels-arrow.prev{left:calc(50% - 383.525px)}
+#loved .buzzy-reels-arrow.next{right:calc(50% - 383.525px)}
+@media(max-width:700px){
+ #loved .buzzy-reels-stage{--reel-width:238.05px}
+ #loved .buzzy-reel{border-radius:26.45px}
+ #loved .buzzy-reels-arrow.prev{left:2px}
+ #loved .buzzy-reels-arrow.next{right:2px}
+}
+/* Mobile-only 90% dimensions and rhythm; preserve full-size touch targets. */
+@media(max-width:700px){
+ #how-to-use.how-demo{margin-bottom:16.2px}
+ #how-to-use .how-demo-shell{padding:21.6px 9px 10.8px}
+ #how-to-use .how-demo-heading{gap:9px;margin-bottom:18px;padding-inline:9px}
+ #how-to-use .how-demo-heading h2{font-size:clamp(25.2px,7.2vw,34.2px);max-width:297px}
+ #how-to-use .how-demo-media{width:min(90%,248.4px);border-radius:18px}
+ #how-to-use .how-demo-controls{gap:6.3px;margin-top:9px}
+ #how-to-use .how-demo-options{gap:7.2px}
+ #how-to-use .how-demo-tab{flex-basis:104.4px;gap:6.3px}
+ #how-to-use .how-demo-tab>span{width:27px;height:27px}
+ #how-to-use .how-demo-caption{margin-top:9px;font-size:11px}
+ #comparison.vibe-compare{padding-block:10.08px!important;margin-bottom:11.52px!important}
+ #comparison .vibe-compare-panel{padding-block:18.72px 8.64px}
+ #comparison #vibeCompareTitle{font-size:clamp(25.2px,7.38vw,32.4px);margin-bottom:20.16px;max-width:324px}
+ #comparison #vibeCompareTitle::after{width:68.4px;margin-top:10.08px}
+ #comparison .vibe-rail{gap:12.6px;padding-block:2.7px 7.2px}
+ #comparison .vibe-card{flex-basis:72%;padding:10.8px 12.6px}
+ #comparison .vibe-media{height:clamp(138.6px,39.6vw,174.6px);margin-bottom:7.2px}
+ #comparison .vibe-card h3{font-size:clamp(16.2px,4.86vw,20.7px);min-height:43.2px;margin-bottom:10.08px}
+ #comparison .vibe-facts{gap:7.2px;margin-bottom:8.64px}
+ #comparison .vibe-facts li{min-height:41.76px;padding:5.4px 9px;gap:9px;font-size:12.6px}
+ #comparison .vibe-facts svg{width:28.8px;height:28.8px;flex-basis:28.8px}
+ #comparison .vibe-link{font-size:14.4px}
+}

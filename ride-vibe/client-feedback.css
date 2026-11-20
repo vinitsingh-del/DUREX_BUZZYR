@@ -1,0 +1,124 @@
+/* Client PDF, 22 Oct 2026: scoped final-copy and compact-layout pass. */
+#top{--pdp-section-gap:16px}
+#top>section:not(#shop){margin-block:var(--pdp-section-gap) 0!important;padding-block:0!important}
+#how-to-use .how-demo-shell,#specifications .mode-showcase-shell,#comparison .vibe-compare-panel{padding-block:0!important}
+#product-story .story-heading{padding-top:0;padding-bottom:14px}
+#product-story .story-footer{padding-top:10px;padding-bottom:0}
+#product-care .care-routine-footer{margin-top:12px}
+#product-care .care-routine-footer>p{display:none}
+#product-care #careRoutineTitle{margin-bottom:16px!important}
+#reviews .customer-review-shell,#bundle .bundle-shell,#review-center .faq-shell-custom{padding-block:0!important}
+#bundle .section-heading-block,#comparison #vibeCompareTitle,#review-center .section-heading-block{margin-bottom:16px!important}
+#loved .buzzy-reels-heading{padding-bottom:16px}
+#how-to-use .how-demo-heading{margin-bottom:14px}
+#how-to-use .how-demo-caption{min-height:2.8em;margin-bottom:0;max-width:560px;margin-inline:auto}
+#how-to-use .how-demo-controls{grid-template-columns:minmax(0,1fr);max-width:780px}
+#how-to-use .how-demo-arrow{display:none}
+#how-to-use .how-demo-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible;gap:8px}
+#how-to-use .how-demo-tab{justify-content:center;padding:6px;gap:7px;min-height:44px;white-space:normal}
+#how-to-use .how-demo-tab strong{font-size:14px}
+/* Defined photography boundary, without copy on top of the product. */
+#top #shop .main-media-card.transparent-hero-media{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(20,5,55,.32))!important;border:1px solid rgba(223,203,255,.48)!important;border-radius:20px!important;box-shadow:none!important;overflow:hidden}
+#top #shop .thumb{background:rgba(19,9,57,.5)!important;border:1px solid rgba(223,203,255,.45)!important}
+#top #shop .thumb.active{border:2px solid #ffe22b!important}
+#shop .product-detail-card .purchase-card{padding:5px!important;gap:8px!important;margin-top:8px!important;min-height:0!important}
+#shop .purchase-card .qty,#shop .purchase-card .primary-cta{height:44px!important;min-height:44px!important;padding-block:0!important}
+#shop .qty button{min-height:44px}
+#shop .trust-assurance-card{padding:8px!important;margin-top:8px!important}
+#shop .assurance-icon{width:28px;height:28px;margin-bottom:3px}
+/* Five USPs, drawn as simple vectors; no promotional copy baked into images. */
+#product-story .story-card{flex-basis:calc((100% - 56px)/5);padding:14px 12px;min-height:0}
+#product-story .usp-symbol{height:104px;display:grid;place-items:center;border-radius:14px;background:rgba(25,10,72,.22);color:#ffe22b}
+#product-story .usp-symbol svg{width:64px;height:64px}
+#product-story .story-card-copy{padding:14px 0 0}
+#product-story .story-card h3{font-size:15px;line-height:1.2;min-height:36px}
+#product-story .story-card p{font-size:13px;line-height:1.4}
+#product-story h2{max-width:900px;font-size:clamp(25px,3.6vw,44px)}
+#product-story .story-number{margin-bottom:8px}
+#product-care .care-routine-photo--pack{background:none;object-fit:contain;background-color:#fff}
+#reviews .client-review blockquote{display:block!important;-webkit-line-clamp:unset!important;overflow:visible!important}
+/* Two compact lube cards visible together, with ordinary horizontal browsing. */
+#top #bundle .bundle-viewport{width:100%!important;max-width:720px!important;margin-inline:auto!important;overflow:visible!important}
+#top #bundle .bundle-grid{display:flex!important;gap:12px!important;padding:2px 0 8px!important;scroll-padding-inline:0!important;overflow-x:auto!important;scroll-snap-type:x mandatory}
+#top #bundle .bundle-card{flex:0 0 calc((100% - 12px)/2)!important;width:calc((100% - 12px)/2)!important;min-width:0!important;max-width:none!important;transform:none!important;opacity:1!important;scroll-snap-align:start}
+#top #bundle .bundle-media{height:200px!important;aspect-ratio:auto!important}
+#top #bundle .bundle-media img{height:100%!important;width:100%!important;object-fit:contain!important}
+#top #bundle .bundle-content{padding:12px!important}
+#top #bundle .bundle-content h3{font-size:15px!important;line-height:1.25!important;min-height:38px}
+#top #bundle .bundle-content button{min-height:44px;font-size:13px!important}
+#top #bundle .bundle-arrow{display:none!important}
+/* Compact horizontal white product strip, as in the Big Bang reel reference. */
+#loved .buzzy-reel{grid-template-rows:minmax(0,1fr) 78px;border-radius:20px}
+#loved .buzzy-reel-product{height:78px;grid-template-columns:38px minmax(0,1fr) 44px;gap:8px;padding:9px;background:#fff;color:#10154b}
+#loved .buzzy-reel-product img{width:38px;height:52px;border-radius:8px}
+#loved .buzzy-reel-product strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px;line-height:1.25}
+#loved .buzzy-reel-product p{font-size:15px;margin:4px 0 2px}
+#loved .buzzy-reel-product s{font-size:10px;margin-left:3px}
+#loved .buzzy-reel-product span{font-size:11px;line-height:1.2;color:#187631}
+#loved .buzzy-reel-add{width:44px;height:44px;min-height:44px;font-size:12px;border-radius:50%}
+#loved .buzzy-reels-heading h2{font-size:clamp(28px,4vw,44px)}
+/* Opaque purchase surface remains readable over white cards and moving videos. */
+#stickyPurchaseBar.sticky-purchase-bar{background:#171044!important;border:1px solid #8d7cbf!important;box-shadow:0 4px 20px #05021b66!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;color:#fff!important}
+#stickyPurchaseBar::before,#stickyPurchaseBar::after{display:none!important}
+#stickyPurchaseBar .sticky-product-copy,#stickyPurchaseBar .sticky-product-copy strong,#stickyPurchaseBar .sticky-product-copy span{color:#fff!important}
+#stickyPurchaseBar .sticky-product-copy del{color:#c7bddf!important;opacity:1!important}
+#stickyPurchaseBar .sticky-qty{background:#322564!important;color:#fff!important;border:1px solid #9283be!important}
+#stickyPurchaseBar .sticky-qty button{color:#fff!important}
+#stickyPurchaseBar #stickyAddToCart{background:#ffe22b!important;color:#171044!important}
+@media(max-width:700px){
+ #top{--pdp-section-gap:14px}
+ #top #shop .main-media-card{height:clamp(230px,36svh,300px)!important;min-height:0!important;max-height:300px!important;aspect-ratio:auto!important}
+ #top #shop .main-media-card :is(video,img){width:100%!important;height:100%!important;object-fit:contain!important;max-height:100%!important;inset:0!important}
+ #shop .hero-shell{gap:8px!important}
+ #shop .hero-left{gap:6px!important}
+ #shop .thumb-grid{margin-top:6px!important;gap:6px!important}
+ #shop .thumb{flex-basis:44px!important;width:44px!important;height:44px!important;min-height:44px!important}
+ #shop .product-title-row h1{font-size:clamp(18px,5.2vw,22px)!important;line-height:1.1!important}
+ #shop .product-rating{margin-top:6px!important}
+ #shop .product-price-block{margin-top:6px!important}
+ #shop .trusted-strip{margin-top:8px!important}
+ #shop .prepaid-offer{margin-block:6px!important}
+ #shop .product-detail-card .purchase-card{grid-template-columns:100px minmax(0,1fr)!important}
+ #shop .trust-assurance-card{padding:6px!important}
+ #shop .assurance-item strong{font-size:10px!important}
+ #shop .assurance-item>span:last-child{font-size:9px!important}
+ #shop .assurance-icon{width:23px!important;height:23px!important}
+ #how-to-use .how-demo-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ #how-to-use .how-demo-tab strong{font-size:12px}
+ #how-to-use .how-demo-caption{font-size:12px;min-height:2.8em;margin-top:8px}
+ #product-story .story-heading{padding:0 6px 14px}
+ #product-story .story-card{flex-basis:64%;padding:12px}
+ #product-story .usp-symbol{height:86px}
+ #product-story .story-card h3{font-size:15px}
+ #product-story .story-card p{font-size:12px}
+ #product-care #careRoutineTitle{font-size:clamp(24px,7vw,30px)!important}
+ #top #bundle .bundle-grid{gap:8px!important}
+ #top #bundle .bundle-card{flex-basis:calc((100% - 8px)/2)!important;width:calc((100% - 8px)/2)!important;border-radius:16px!important}
+ #top #bundle .bundle-media{height:138px!important}
+ #top #bundle .bundle-content{padding:8px!important}
+ #top #bundle .bundle-content h3{font-size:12px!important;min-height:45px}
+ #top #bundle .bundle-content p{font-size:9px!important}
+ #top #bundle .bundle-content button{font-size:11px!important;padding-inline:4px!important}
+ #loved .buzzy-reels-heading{padding-bottom:12px}
+ #review-center .section-heading-block h2{font-size:28px!important}
+}
+
+#product-care img.care-routine-photo{height:auto;object-fit:contain;max-width:100%}
+#top #bundle .bundle-media{box-sizing:border-box;overflow:hidden;flex-shrink:0}
+#top #bundle .bundle-media img{width:100%!important;height:100%!important;max-height:100%!important;object-fit:contain!important;aspect-ratio:auto!important}
+#reviews .client-review{height:auto!important;min-height:220px!important}
+@media(min-width:701px){
+ #product-story .story-card{flex:0 0 calc((100% - 72px)/5);box-sizing:border-box}
+ #product-story .story-rail{gap:18px}
+ #product-story .story-footer,#product-story .story-heading .story-arrows{display:none}
+}
+#top #product-care #careRoutineTitle{font-size:clamp(26px,3.2vw,42px)!important;margin-bottom:16px!important}
+#reviews .review-card{height:auto!important;min-height:220px!important;justify-content:flex-start!important;gap:10px!important}
+#reviews .review-card.client-review blockquote{margin:0!important;font-size:14px!important;line-height:1.45!important}
+
+/* Five supplied collage panels, cropped without divider lines. */
+#product-story .usp-photo{position:relative;overflow:hidden;background:#e9ddc9;isolation:isolate}
+#product-story .usp-photo img{display:block;width:100%;height:100%;max-width:none;aspect-ratio:auto;object-fit:cover;object-position:center;border-radius:0;position:absolute;inset:0;transform:none}
+#product-story .usp-photo--runtime img{object-position:50% 24%}
+#product-story .usp-photo--charge img{object-position:50% 40%}
+#product-story .usp-photo--silicone img{object-position:50% 27%}

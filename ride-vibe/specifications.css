@@ -1,0 +1,389 @@
+/* Product Features / Walkthrough — transparent product close-ups in a compact glass rail. */
+#specifications .specifications-shell{
+  width:min(100%,1400px);
+  max-width:100%;
+  margin-inline:auto;
+  padding:clamp(30px,3.6vw,52px);
+  overflow:hidden;
+  border:1px solid rgba(197,224,255,.76);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 88% 8%,rgba(74,126,255,.26),transparent 34%),
+    linear-gradient(135deg,rgba(17,43,151,.9),rgba(21,31,112,.9) 54%,rgba(76,42,139,.86));
+  box-shadow:0 20px 60px rgba(3,9,53,.24),inset 0 1px 0 rgba(255,255,255,.18);
+  backdrop-filter:blur(18px);
+}
+
+#specifications .specifications-heading{
+  max-width:760px;
+  margin:0 auto clamp(24px,3vw,36px);
+  align-items:center;
+  gap:10px;
+  text-align:center;
+}
+
+#specifications .specifications-heading .eyebrow{
+  margin:0;
+  color:#baf0ff;
+  font-size:12px;
+  line-height:1.2;
+  letter-spacing:.15em;
+}
+
+#specifications .specifications-heading h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(36px,3.8vw,54px);
+  line-height:.98;
+  letter-spacing:-.04em;
+  text-wrap:balance;
+}
+
+#specifications .specifications-intro{
+  max-width:610px;
+  margin:0;
+  color:rgba(255,255,255,.76);
+  font-family:'Assist',Arial,sans-serif;
+  font-size:clamp(14px,1.25vw,17px);
+  line-height:1.5;
+  text-wrap:balance;
+}
+
+#specifications .walkthrough-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  width:100%;
+  min-width:0;
+}
+
+#specifications .walkthrough-card{
+  position:relative;
+  display:grid;
+  grid-template-rows:auto minmax(0,1fr) auto;
+  min-width:0;
+  min-height:500px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.52);
+  border-radius:24px;
+  background:linear-gradient(155deg,rgba(255,255,255,.16),rgba(16,27,106,.44));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 16px 36px rgba(3,9,53,.2);
+  backdrop-filter:blur(18px);
+  isolation:isolate;
+}
+
+#specifications .walkthrough-card::before{
+  content:"";
+  position:absolute;
+  inset:18% -20% 20%;
+  z-index:-1;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(129,216,255,.18),rgba(74,126,255,.08) 44%,transparent 72%);
+  pointer-events:none;
+}
+
+#specifications .walkthrough-card-top{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-width:0;
+  padding:17px 18px 0;
+}
+
+#specifications .walkthrough-card-top span{
+  min-width:0;
+  color:#baf0ff;
+  font-family:'One',Arial,sans-serif;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.08em;
+}
+
+#specifications .walkthrough-card-top strong{
+  flex:none;
+  padding:7px 10px;
+  border:1px solid rgba(255,218,68,.7);
+  border-radius:999px;
+  background:rgba(255,218,68,.94);
+  color:#07155d;
+  font-family:'One',Arial,sans-serif;
+  font-size:10px;
+  font-weight:800;
+  line-height:1;
+  white-space:nowrap;
+}
+
+#specifications .walkthrough-visual{
+  position:relative;
+  display:grid;
+  min-width:0;
+  min-height:300px;
+  place-items:center;
+  overflow:hidden;
+  margin:0 10px;
+}
+
+#specifications .walkthrough-visual img{
+  display:block;
+  width:112%;
+  height:112%;
+  min-width:0;
+  min-height:0;
+  max-width:none;
+  object-fit:contain;
+  object-position:center;
+  filter:drop-shadow(0 18px 22px rgba(3,8,45,.28));
+}
+
+#specifications .walkthrough-card-tapping .walkthrough-visual img{
+  width:120%;
+  height:120%;
+  object-position:center 24%;
+}
+
+#specifications .walkthrough-card-dual .walkthrough-visual img{
+  width:106%;
+  height:106%;
+  object-position:center 42%;
+}
+
+#specifications .walkthrough-card-controls .walkthrough-visual img{
+  width:116%;
+  height:116%;
+  object-position:center 68%;
+}
+
+#specifications .walkthrough-copy{
+  position:relative;
+  z-index:2;
+  min-width:0;
+  padding:18px;
+  border-top:1px solid rgba(255,255,255,.24);
+  background:linear-gradient(180deg,rgba(7,21,93,.18),rgba(7,21,93,.54));
+}
+
+#specifications .walkthrough-copy h3{
+  margin:0 0 8px;
+  color:#fff;
+  font-family:'One',Arial,sans-serif;
+  font-size:clamp(20px,1.8vw,25px);
+  line-height:1.03;
+  letter-spacing:-.025em;
+  text-wrap:balance;
+}
+
+#specifications .walkthrough-copy p{
+  margin:0;
+  color:rgba(255,255,255,.76);
+  font-size:13px;
+  line-height:1.48;
+}
+
+#specifications .walkthrough-facts{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;
+  margin-top:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:18px;
+  background:rgba(255,255,255,.24);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+#specifications .walkthrough-facts div{
+  display:flex;
+  min-width:0;
+  min-height:78px;
+  flex-direction:column;
+  justify-content:center;
+  gap:6px;
+  padding:14px 16px;
+  background:rgba(7,21,93,.56);
+}
+
+#specifications .walkthrough-facts span{
+  color:#baf0ff;
+  font-family:'One',Arial,sans-serif;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+#specifications .walkthrough-facts b{
+  color:#fff;
+  font-family:'Assist',Arial,sans-serif;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.3;
+}
+
+#specifications.in-view .walkthrough-card,
+#specifications.in-view .walkthrough-facts{
+  animation:walkthrough-reveal .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+#specifications.in-view .walkthrough-card:nth-child(2){animation-delay:.08s}
+#specifications.in-view .walkthrough-card:nth-child(3){animation-delay:.16s}
+#specifications.in-view .walkthrough-facts{animation-delay:.22s}
+
+@keyframes walkthrough-reveal{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Feel every tap: a deliberate pulse burst, pause, then a second vibration burst. */
+#specifications.in-view .walkthrough-card-tapping .walkthrough-visual img{
+  position:relative;
+  z-index:1;
+  transform-origin:50% 32%;
+  animation:tap-pulse-vibrate 4.8s ease-in-out .55s infinite;
+  will-change:transform,filter;
+}
+#specifications .walkthrough-card-tapping .walkthrough-visual::after{
+  content:"";
+  position:absolute;
+  inset:18% 13%;
+  z-index:0;
+  border:2px solid rgba(255,218,68,.7);
+  border-radius:50%;
+  opacity:0;
+  transform:scale(.72);
+  animation:tap-signal-ring 4.8s ease-out .55s infinite;
+}
+@keyframes tap-pulse-vibrate{
+  0%,3%,21%,55%,73%,100%{transform:translate3d(0,0,0) scale(1);filter:drop-shadow(0 18px 22px rgba(3,8,45,.28))}
+  5%,9%,13%,57%,61%,65%{transform:translate3d(-3px,1px,0) rotate(-.55deg) scale(1.035);filter:drop-shadow(0 0 24px rgba(255,218,68,.62))}
+  7%,11%,15%,59%,63%,67%{transform:translate3d(3px,-1px,0) rotate(.55deg) scale(1.035);filter:drop-shadow(0 0 28px rgba(255,218,68,.72))}
+  18%,70%{transform:translate3d(0,0,0) scale(1.055);filter:drop-shadow(0 0 32px rgba(255,218,68,.78))}
+}
+@keyframes tap-signal-ring{
+  0%,4%,22%,54%,72%,100%{opacity:0;transform:scale(.72)}
+  10%,60%{opacity:.72}
+  20%,70%{opacity:0;transform:scale(1.18)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #specifications.in-view .walkthrough-card-tapping .walkthrough-visual img,
+  #specifications .walkthrough-card-tapping .walkthrough-visual::after{animation:none!important}
+}
+
+@media(max-width:900px){
+  #specifications .specifications-shell{
+    padding:28px 18px 30px;
+    border-radius:24px;
+  }
+
+  #specifications .specifications-heading{margin-bottom:20px}
+
+  #specifications .walkthrough-grid{
+    display:grid;
+    grid-template-columns:none;
+    grid-auto-flow:column;
+    grid-auto-columns:min(78vw,390px);
+    gap:12px;
+    overflow-x:auto;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:0;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 0 10px;
+  }
+
+  #specifications .walkthrough-grid::-webkit-scrollbar{display:none}
+
+  #specifications .walkthrough-card{
+    min-height:470px;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+
+  #specifications .walkthrough-visual{min-height:285px}
+
+  #specifications .walkthrough-facts{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    margin-top:8px;
+  }
+}
+
+@media(max-width:560px){
+  #specifications .specifications-shell{
+    width:100%;
+    max-width:100%;
+    padding:18px 12px 20px;
+    border-radius:20px;
+  }
+
+  #specifications .specifications-heading{
+    gap:7px;
+    margin-bottom:15px;
+    padding-inline:2px;
+  }
+
+  #specifications .specifications-heading .eyebrow{font-size:9px}
+
+  #specifications .specifications-heading h2{
+    font-size:clamp(25px,7.2vw,29px);
+    line-height:.98;
+  }
+
+  #specifications .specifications-intro{
+    font-size:12px;
+    line-height:1.42;
+  }
+
+  #specifications .walkthrough-grid{
+    grid-auto-columns:84%;
+    gap:9px;
+    padding-bottom:8px;
+  }
+
+  #specifications .walkthrough-card{
+    min-height:408px;
+    border-radius:19px;
+  }
+
+  #specifications .walkthrough-card-top{padding:13px 13px 0}
+  #specifications .walkthrough-card-top span{font-size:8.5px}
+  #specifications .walkthrough-card-top strong{padding:6px 8px;font-size:8.5px}
+
+  #specifications .walkthrough-visual{
+    min-height:244px;
+    margin-inline:6px;
+  }
+
+  #specifications .walkthrough-copy{padding:13px}
+  #specifications .walkthrough-copy h3{margin-bottom:6px;font-size:19px}
+  #specifications .walkthrough-copy p{font-size:11.5px;line-height:1.42}
+
+  #specifications .walkthrough-facts{
+    gap:1px;
+    border-radius:15px;
+  }
+
+  #specifications .walkthrough-facts div{
+    min-height:66px;
+    gap:5px;
+    padding:11px;
+  }
+
+  #specifications .walkthrough-facts span{font-size:8px}
+  #specifications .walkthrough-facts b{font-size:11.5px;line-height:1.28}
+}
+
+@media(max-width:360px){
+  #specifications .specifications-shell{padding-inline:10px}
+  #specifications .walkthrough-grid{grid-auto-columns:88%}
+  #specifications .walkthrough-facts div{padding-inline:9px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #specifications.in-view .walkthrough-card,
+  #specifications.in-view .walkthrough-facts{animation:none}
+}

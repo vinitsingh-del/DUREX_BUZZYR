@@ -1,0 +1,17 @@
+/* A single outer gap after the hero; preserve each section's internal layout. */
+#top{--pdp-section-gap:32px}
+#top>#shop{margin-bottom:0!important;padding-bottom:0!important}
+#top>section:not(#shop){
+ display:flow-root;
+ margin-block:var(--pdp-section-gap) 0!important;
+ padding-block:0!important;
+}
+/* Mobile: three equal controls, all visible without arrows or a scrolling rail. */
+@media(max-width:700px){
+ #how-to-use .how-demo-arrow{display:none}
+ #how-to-use .how-demo-controls{grid-template-columns:minmax(0,1fr);gap:0;width:100%;margin-inline:0}
+ #how-to-use .how-demo-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible;scroll-snap-type:none;width:100%}
+ #how-to-use .how-demo-tab{width:100%;min-width:0;min-height:44px;justify-content:center;gap:4px;padding:5px 4px;white-space:normal}
+ #how-to-use .how-demo-tab>span{width:23px;height:23px;font-size:9px}
+ #how-to-use .how-demo-tab strong{font-size:11px;line-height:1.2;overflow-wrap:normal;text-align:center}
+}

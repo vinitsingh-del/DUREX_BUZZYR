@@ -1,0 +1,169 @@
+/* Product-led mode walkthrough, using the existing transparent product video. */
+#specifications.mode-showcase {isolation:isolate;position:relative;overflow:visible!important;}
+#specifications .mode-showcase-shell {box-sizing:border-box;width:100%;max-width:1120px;margin-inline:auto;padding:38px 30px 48px;border:1px solid rgba(186,144,255,.63);border-radius:24px;background:radial-gradient(ellipse at 34% 76%,rgba(98,22,230,.58),transparent 65%),linear-gradient(130deg,rgba(62,13,168,.88),rgba(36,13,110,.94));color:#fff;}
+#specifications .mode-showcase-heading {text-align:center;margin-bottom:26px;}
+#specifications .mode-showcase-heading p {font:800 clamp(23px,2.7vw,32px)/1.2 'One',Arial,sans-serif;margin:0 0 10px;color:#fff;}
+#specifications #modeShowcaseTitle {font:800 clamp(34px,4.2vw,58px)/1.08 'One',Arial,sans-serif;letter-spacing:-.035em;margin:0;max-width:none;color:#fff;text-wrap:balance;}
+#specifications .mode-choices {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:670px;margin:0 auto 20px;}
+#specifications .mode-choice {appearance:none;display:flex;align-items:center;justify-content:center;gap:12px;min-width:0;min-height:56px;padding:8px 14px;border:1px solid #a578ff;border-radius:999px;background:transparent;color:#fff;font:700 15px/1.2 'Assist',Arial,sans-serif;text-transform:uppercase;cursor:pointer;transition:background .18s,color .18s,box-shadow .18s;}
+#specifications .mode-choice.is-active {background:#ffe538;border-color:#ffe538;color:#17104a;box-shadow:0 0 21px rgba(255,221,48,.46);}
+#specifications .mode-choice-icon {font:400 38px/1 Arial,sans-serif;}
+#specifications .mode-choice-combined {font-size:27px;letter-spacing:-7px;margin-right:6px;color:#a8e8ff;}
+#specifications .mode-choice.is-active .mode-choice-combined {color:inherit;}
+#specifications .mode-choice:focus-visible,#specifications .mode-showcase-dots button:focus-visible {outline:3px solid #abeaff;outline-offset:4px;}
+#specifications .mode-showcase-stage {display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.2fr) minmax(0,.94fr);align-items:center;gap:12px;outline-offset:4px;}
+#specifications .mode-showcase-summary {min-width:0;padding-left:6px;}
+#specifications .mode-showcase-summary h3 {display:flex;flex-direction:column;gap:3px;margin:0;font:800 clamp(42px,5.2vw,68px)/1 'One',Arial,sans-serif;letter-spacing:-.03em;color:#fff;}
+#specifications #featureModeNumber {color:#ffe637;font-size:clamp(64px,7.2vw,90px);}
+#specifications #featureModeCount {font:700 clamp(20px,2.4vw,29px)/1.25 'Assist',Arial,sans-serif;color:#a7e7ff;margin:10px 0 0;}
+#specifications .mode-showcase-summary>i {display:block;width:66px;height:4px;border-radius:3px;background:#a66bfb;margin:18px 0;}
+#specifications #featureModeAction {font:400 clamp(17px,1.8vw,23px)/1.4 'Assist',Arial,sans-serif;color:#fff;margin:0;}
+#specifications .mode-showcase-product {min-width:0;}
+#specifications .mode-product-stage {position:relative;isolation:isolate;aspect-ratio:1;}
+#specifications .mode-product-circle {position:absolute;inset:5% 0;border-radius:50%;background:rgba(101,79,226,.56);z-index:-1;}
+#specifications .feature-mode-video {display:block;width:100%;height:100%;aspect-ratio:1;max-width:none;object-fit:contain;background:transparent;border:0;border-radius:0;box-shadow:none;}
+#specifications .mode-showcase-dots {display:flex;justify-content:center;gap:10px;margin-top:4px;}
+#specifications .mode-showcase-dots button {appearance:none;display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;background:transparent;border-radius:50%;cursor:pointer;}
+#specifications .mode-showcase-dots button::before {content:'';display:block;width:18px;height:18px;border:2px solid #a574ff;border-radius:50%;background:transparent;}
+#specifications .mode-showcase-dots button.is-active::before {background:#ffe537;border-color:#ffe537;}
+#specifications .mode-instructions {list-style:none;display:grid;gap:54px;margin:0;padding:0;min-width:0;}
+#specifications .mode-instructions li {display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;align-items:start;}
+#specifications .mode-step-number {display:grid;place-items:center;box-sizing:border-box;width:52px;height:52px;border:3px solid #9a65fb;border-radius:50%;font:700 27px/1 'Assist',Arial,sans-serif;color:#ffe637;}
+#specifications .mode-instructions h4 {font:700 18px/1.3 'Assist',Arial,sans-serif;color:#fff;margin:4px 0 10px;}
+#specifications .mode-instructions p {display:flex;align-items:flex-start;gap:12px;margin:0;font:400 18px/1.45 'Assist',Arial,sans-serif;color:#afe5ff;}
+#specifications .mode-instruction-icon {flex:none;display:grid;place-items:center;width:32px;height:32px;border:2px solid #9b6cf9;border-radius:50%;font:400 26px/1 Arial,sans-serif;color:#c0eaff;}
+#specifications #featureStepTwoIcon {border-color:#9ee9ff;color:#9ee9ff;}
+#specifications .mode-showcase-facts {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:28px;padding:25px 0;border:1px solid rgba(196,160,245,.45);border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.06));box-shadow:inset 0 1px 0 rgba(255,255,255,.17);}
+#specifications .mode-fact {display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;gap:14px;min-width:0;padding:0 18px;}
+#specifications .mode-fact+.mode-fact {border-left:1px solid rgba(196,160,245,.35);}
+#specifications .mode-fact-icon {display:grid;place-items:center;box-sizing:border-box;width:54px;height:54px;border:3px solid #a374ff;border-radius:50%;color:#f4eaff;}
+#specifications .mode-fact-icon svg {width:32px;height:32px;}
+#specifications .mode-fact>div>span {display:block;font:700 12px/1.35 'Assist',Arial,sans-serif;text-transform:uppercase;color:#fff;}
+#specifications .mode-fact p {font:400 13px/1.4 'Assist',Arial,sans-serif;color:#afe0ff;margin:5px 0 0;}
+@media(min-width:761px) and (max-width:1050px){
+ #specifications .mode-showcase-shell {padding:30px 20px;}
+ #specifications .mode-showcase-stage {grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:14px;}
+ #specifications .mode-instructions li {grid-template-columns:40px minmax(0,1fr);gap:10px;}
+ #specifications .mode-step-number {width:40px;height:40px;font-size:22px;}
+ #specifications .mode-instructions h4,#specifications .mode-instructions p {font-size:15px;}
+ #specifications .mode-fact {grid-template-columns:40px minmax(0,1fr);gap:8px;padding:0 10px;}
+ #specifications .mode-fact-icon {width:40px;height:40px;}
+ #specifications .mode-fact-icon svg {width:25px;height:25px;}
+}
+@media(max-width:760px){
+ #specifications.mode-showcase {padding-inline:12px!important;}
+ #specifications .mode-showcase-shell {padding:24px 12px 20px;border-radius:22px;}
+ #specifications .mode-showcase-heading {margin:0 0 20px;}
+ #specifications .mode-showcase-heading p {font-size:20px;margin-bottom:10px;}
+ #specifications #modeShowcaseTitle {max-width:320px;margin-inline:auto;font-size:clamp(29px,8.2vw,36px);line-height:1.04;}
+ #specifications .mode-choices {gap:5px;margin-bottom:16px;max-width:390px;}
+ #specifications .mode-choice {min-height:42px;padding:6px 5px;gap:7px;font-size:10px;}
+ #specifications .mode-choice-icon {font-size:27px;}
+ #specifications .mode-choice-combined {font-size:20px;letter-spacing:-5px;margin-right:4px;}
+ #specifications .mode-showcase-stage {grid-template-columns:minmax(0,1fr);gap:0;}
+ #specifications .mode-showcase-product {grid-row:1;width:100%;max-width:330px;margin:auto;}
+ #specifications .mode-product-circle {inset:5% 3%;}
+ #specifications .mode-showcase-dots {gap:4px;margin-top:0;}
+ #specifications .mode-showcase-dots button {width:28px;height:28px;}
+ #specifications .mode-showcase-dots button::before {width:11px;height:11px;border-width:1.5px;}
+ #specifications .mode-showcase-summary {padding:6px 6px 14px;}
+ #specifications .mode-showcase-summary h3 {flex-direction:row;align-items:baseline;gap:8px;font-size:31px;line-height:1.1;}
+ #specifications #featureModeNumber {font-size:34px;}
+ #specifications #featureModeCount {font-size:20px;margin-top:3px;}
+ #specifications .mode-showcase-summary>i {width:44px;height:3px;margin:9px 0;}
+ #specifications #featureModeAction {font-size:15px;line-height:1.4;}
+ #specifications .mode-instructions {gap:22px;border-top:1px solid rgba(196,160,245,.42);padding:14px 4px 18px;}
+ #specifications .mode-instructions li {grid-template-columns:42px minmax(0,1fr);gap:12px;}
+ #specifications .mode-step-number {width:42px;height:42px;font-size:23px;border-width:2px;}
+ #specifications .mode-instructions h4 {font-size:14px;margin:1px 0 5px;line-height:1.25;}
+ #specifications .mode-instructions p {font-size:14px;gap:9px;line-height:1.35;align-items:center;}
+ #specifications .mode-instruction-icon {width:25px;height:25px;font-size:20px;border-width:1.5px;}
+ #specifications .mode-showcase-facts {grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0;padding:17px 0 0;gap:18px 0;border:0;border-top:1px solid rgba(196,160,245,.48);border-radius:0;background:none;box-shadow:none;}
+ #specifications .mode-fact {grid-template-columns:40px minmax(0,1fr);gap:10px;padding:0 8px 0 0;align-items:start;}
+ #specifications .mode-fact:nth-child(odd) {border-left:0;}
+ #specifications .mode-fact:nth-child(even) {padding:0 0 0 10px;}
+ #specifications .mode-fact-icon {width:40px;height:40px;border-width:2px;}
+ #specifications .mode-fact-icon svg {width:25px;height:25px;}
+ #specifications .mode-fact>div>span {font-size:10px;line-height:1.3;}
+ #specifications .mode-fact p {font-size:12px;line-height:1.3;margin-top:4px;}
+}
+@media(prefers-reduced-motion:reduce){#specifications .mode-choice{transition:none;}}
+
+/* Compact walkthrough: keep the product full-sized, remove spacing around short copy. */
+#specifications .mode-showcase-shell{padding:24px 26px 24px}
+#specifications .mode-showcase-heading{margin-bottom:16px}
+#specifications .mode-showcase-heading p{font-size:18px;margin-bottom:6px}
+#specifications .mode-choices{margin-bottom:8px}
+#specifications .mode-instructions{gap:24px}
+#specifications .mode-instructions h4{margin-bottom:6px}
+#specifications .mode-showcase-summary>i{margin:12px 0}
+#specifications .mode-showcase-facts{margin-top:14px;padding:14px 0}
+#specifications .mode-fact{gap:10px}
+@media(max-width:760px){
+ #specifications .mode-showcase-shell{padding:18px 12px 16px}
+ #specifications .mode-showcase-heading{margin-bottom:12px}
+ #specifications .mode-showcase-heading p{font-size:16px;margin-bottom:5px}
+ #specifications .mode-choices{margin-bottom:6px}
+ #specifications .mode-showcase-summary{padding:4px 6px 10px}
+ #specifications .mode-showcase-summary>i{margin:7px 0}
+ #specifications .mode-instructions{gap:12px;padding:10px 4px 12px}
+ #specifications .mode-showcase-facts{margin-top:0;padding:12px 0 0;gap:12px 0}
+}
+
+/* Height-only compaction: target 80% of the preceding layout at phone and desktop
+   sizes. Keep section width and readable type; reclaim media and spacing height. */
+#specifications .mode-showcase-shell{padding-block:16px}
+#specifications .mode-showcase-heading{margin-bottom:10px}
+#specifications .mode-showcase-heading p{margin-bottom:4px}
+#specifications .mode-choices{margin-bottom:6px}
+#specifications .mode-choice{min-height:48px;padding-block:4px}
+#specifications .mode-product-stage{aspect-ratio:100 / 76}
+#specifications .mode-product-circle{inset:5% auto;width:68.4%;left:15.8%;height:90%}
+#specifications .feature-mode-video{aspect-ratio:auto;position:absolute;inset:0;object-fit:contain}
+#specifications .mode-showcase-dots button{width:32px;height:32px}
+#specifications .mode-showcase-facts{padding-block:10px}
+#specifications .mode-fact-icon{width:48px;height:48px}
+#specifications .mode-fact{grid-template-columns:48px minmax(0,1fr)}
+@media(max-width:760px){
+ #specifications .mode-showcase-shell{padding-block:12px}
+ #specifications .mode-choice{min-height:42px;padding-block:6px}
+ #specifications .mode-product-stage{aspect-ratio:100 / 60}
+ #specifications .mode-product-circle{width:54%;left:23%}
+ #specifications .mode-showcase-dots button{width:28px;height:28px}
+ #specifications .mode-showcase-summary{padding-block:2px 8px}
+ #specifications .mode-showcase-summary>i{margin-block:5px}
+ #specifications .mode-instructions{gap:10px;padding-block:8px}
+ #specifications .mode-showcase-facts{padding-block:8px 0;gap:8px 0}
+ #specifications .mode-fact{grid-template-columns:40px minmax(0,1fr)}
+ #specifications .mode-fact-icon{width:40px;height:40px}
+}
+
+/* Further mobile-only compaction of the current mode section. */
+@media(max-width:760px){
+ #specifications .mode-showcase-shell{padding-block:9px}
+ #specifications .mode-showcase-heading{margin-bottom:8px}
+ #specifications .mode-showcase-heading p{font-size:13px;margin-bottom:3px}
+ #specifications #modeShowcaseTitle{font-size:clamp(24px,6.56vw,29px);max-width:280px}
+ #specifications .mode-choice{min-height:36px;padding-block:4px}
+ #specifications .mode-choice-icon{font-size:23px}
+ #specifications .mode-choice-combined{font-size:18px}
+ #specifications .mode-product-stage{aspect-ratio:100/48}
+ #specifications .mode-product-circle{width:43.2%;left:28.4%}
+ #specifications .mode-showcase-summary{padding-block:2px 6px}
+ #specifications .mode-showcase-summary h3{font-size:25px}
+ #specifications #featureModeNumber{font-size:27px}
+ #specifications #featureModeCount{font-size:16px}
+ #specifications #featureModeAction{font-size:12px}
+ #specifications .mode-showcase-summary>i{margin-block:4px}
+ #specifications .mode-instructions{gap:8px;padding-block:6px}
+ #specifications .mode-instructions li{grid-template-columns:34px minmax(0,1fr);gap:9px}
+ #specifications .mode-step-number{width:34px;height:34px;font-size:19px}
+ #specifications .mode-instructions h4{font-size:12px;margin-bottom:4px}
+ #specifications .mode-instructions p{font-size:12px;gap:7px}
+ #specifications .mode-instruction-icon{width:22px;height:22px;font-size:17px}
+ #specifications .mode-showcase-facts{padding-top:6px;gap:6px 0}
+ #specifications .mode-fact{grid-template-columns:32px minmax(0,1fr);gap:7px}
+ #specifications .mode-fact-icon{width:32px;height:32px}
+ #specifications .mode-fact-icon svg{width:21px;height:21px}
+ #specifications .mode-fact p{font-size:11px;margin-top:3px}
+}

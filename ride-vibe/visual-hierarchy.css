@@ -1,0 +1,679 @@
+/* Premium visual-hierarchy pass.
+   Keeps the PDP's existing content and interactions while reserving glass for
+   controls and cards that are actually actionable. */
+:root{
+  --vh-glass:linear-gradient(145deg,rgba(255,255,255,.16),rgba(144,110,222,.14) 52%,rgba(15,35,122,.28));
+  --vh-glass-soft:linear-gradient(145deg,rgba(255,255,255,.12),rgba(129,98,208,.1) 54%,rgba(12,26,105,.2));
+  --vh-white-line:rgba(255,255,255,.62);
+  --vh-soft-line:rgba(214,237,255,.42);
+  --vh-shadow:0 18px 42px rgba(5,8,58,.2),inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+/* Decorative section containers are intentionally open. The functional
+   content inside remains carded where that treatment assists interaction. */
+#how-to-use .how-use-shell,
+#indulge .bold-shell,
+#specifications .specifications-shell,
+#product-care .product-care-shell,
+#reviews .customer-review-shell,
+#bundle .bundle-shell,
+#comparison .massager-explore-shell,
+#loved .community-reels-shell,
+#review-center .faq-shell-custom{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+
+/* The product detail content is preserved, while its decorative outer blue
+   panel is removed so purchase information joins the hero composition. */
+.hero-right.product-detail-card{
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+
+/* A single readable headline is enough in each content-led section. */
+#how-to-use .how-use-intro .eyebrow,
+#indulge .bold-copy .eyebrow,
+#product-care .product-care-heading .eyebrow,
+#comparison .massager-explore-heading .eyebrow,
+#loved .community-reels-heading .eyebrow,
+#review-center .section-heading-block .eyebrow,
+#bundle .section-heading-block>p:last-child,
+#product-care .product-care-heading>p:last-child,
+#comparison .massager-explore-heading>p:last-child,
+#loved .community-reels-subtitle{display:none!important}
+
+#how-to-use .how-use-intro,
+#specifications .specifications-heading,
+#product-care .product-care-heading,
+#reviews .review-heading,
+#bundle .section-heading-block,
+#comparison .massager-explore-heading,
+#loved .community-reels-heading,
+#review-center .section-heading-block{
+  margin-inline:auto;
+  text-align:center;
+}
+
+#how-to-use .how-use-intro,
+#specifications .specifications-heading,
+#product-care .product-care-heading,
+#bundle .section-heading-block,
+#comparison .massager-explore-heading,
+#loved .community-reels-heading,
+#review-center .section-heading-block{margin-bottom:clamp(18px,2.2vw,28px)!important}
+
+/* How to use: an open media stage and concise, yellow, operational controls.
+   This removes the old floating callouts so the video can never be obscured. */
+#how-to-use .how-use-shell{max-width:1120px;padding:0!important;overflow:visible!important}
+#how-to-use .how-use-content.how-use-stage{
+  display:grid!important;
+  grid-template-columns:minmax(0,1.08fr) minmax(250px,.72fr);
+  align-items:center;
+  gap:clamp(18px,3vw,42px);
+  min-height:0!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+#how-to-use .how-video-stage{
+  position:relative!important;
+  width:min(100%,420px)!important;
+  max-width:420px;
+  margin-inline:auto!important;
+  border:1px solid rgba(255,255,255,.7)!important;
+  border-radius:24px!important;
+  background:transparent!important;
+  box-shadow:0 16px 34px rgba(5,10,65,.22),inset 0 1px 0 rgba(255,255,255,.22)!important;
+}
+#how-to-use .how-use-video{background:transparent!important}
+#how-to-use .how-callout-grid{
+  position:static!important;
+  display:grid!important;
+  width:100%!important;
+  height:auto!important;
+  grid-template-columns:1fr;
+  gap:10px;
+  pointer-events:auto!important;
+}
+#how-to-use .how-mode-card,
+#how-to-use .how-mode-one,
+#how-to-use .how-mode-two,
+#how-to-use .how-mode-three{
+  position:relative!important;
+  inset:auto!important;
+  display:grid!important;
+  width:100%!important;
+  min-height:76px!important;
+  grid-template-columns:34px minmax(0,1fr);
+  gap:9px!important;
+  align-items:center;
+  padding:10px 12px!important;
+  overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.76)!important;
+  border-radius:16px!important;
+  background:linear-gradient(135deg,rgba(255,232,100,.98),rgba(255,185,40,.96))!important;
+  color:var(--blue-900)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.65),0 9px 20px rgba(7,13,68,.14)!important;
+  text-align:left!important;
+  transform:none!important;
+}
+#how-to-use .how-mode-card::before,
+#how-to-use .how-mode-card::after{content:none!important}
+#how-to-use .how-mode-card:hover,
+#how-to-use .how-mode-card:focus-visible,
+#how-to-use .how-mode-card.is-active{
+  border-color:#fff!important;
+  background:linear-gradient(135deg,#ffe96d,#ffc74a)!important;
+  box-shadow:0 0 0 2px rgba(255,221,74,.44),0 12px 26px rgba(7,13,68,.18)!important;
+  transform:translateY(-2px)!important;
+}
+#how-to-use .how-mode-number{
+  width:34px!important;
+  height:34px!important;
+  border:1px solid rgba(7,21,93,.2)!important;
+  background:rgba(255,255,255,.5)!important;
+  color:var(--blue-900)!important;
+  box-shadow:none!important;
+  font-size:11px!important;
+}
+#how-to-use .how-mode-copy{display:grid!important;gap:2px!important;text-align:left!important}
+#how-to-use .how-mode-copy small{color:rgba(7,21,93,.72)!important;font-size:9px!important;letter-spacing:.08em!important}
+#how-to-use .how-mode-copy strong{color:var(--blue-900)!important;font-size:16px!important;line-height:1.05!important}
+#how-to-use .how-mode-copy>span,
+#how-to-use .how-mode-icon{display:none!important}
+#how-to-use .how-step-progress{display:none!important}
+
+/* Sensory section becomes image-led rather than a large bordered module. */
+#indulge .bold-shell{display:grid;grid-template-columns:minmax(180px,.46fr) minmax(0,1.54fr);gap:clamp(18px,3vw,42px);align-items:center;padding:0!important}
+#indulge .bold-copy{align-self:center}
+#indulge .bold-copy h2{margin:0;max-width:12ch;text-wrap:balance}
+#indulge .bold-gallery{gap:clamp(8px,1.1vw,14px)}
+#indulge .bold-gallery-item{border:0!important;background:transparent!important;box-shadow:none!important}
+#indulge .bold-gallery-item:first-child{transform:translateY(-12px)}
+#indulge .bold-gallery-item img{border-radius:22px;box-shadow:0 16px 34px rgba(5,8,58,.16)}
+
+/* Product Features keeps the close-up images and facts, but drops the second
+   large glass panel in favour of a shorter visual rail. */
+#specifications .specifications-shell{width:100%!important;max-width:1120px;padding:0!important;overflow:visible!important}
+#specifications .walkthrough-grid{gap:clamp(10px,1.35vw,16px)!important}
+#specifications .walkthrough-card{
+  min-height:clamp(310px,28vw,390px)!important;
+  border-color:var(--vh-soft-line)!important;
+  background:var(--vh-glass-soft)!important;
+  box-shadow:var(--vh-shadow)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(125%)!important;
+  backdrop-filter:blur(16px) saturate(125%)!important;
+}
+#specifications .walkthrough-visual{min-height:0!important;margin:0 4px!important}
+#specifications .walkthrough-copy{padding:0 15px 15px!important}
+#specifications .walkthrough-copy h3{font-size:clamp(17px,1.55vw,22px)!important}
+#specifications .walkthrough-facts{margin-top:clamp(12px,1.6vw,18px)!important;border-top:1px solid rgba(255,255,255,.36)!important;background:transparent!important;box-shadow:none!important}
+#specifications .walkthrough-facts>div{border-color:rgba(255,255,255,.32)!important;background:transparent!important;box-shadow:none!important}
+
+/* Product care: the active image is the single focal glass surface. */
+#product-care .product-care-shell{width:100%!important;max-width:1120px;padding:0!important;overflow:visible!important}
+#product-care .care-story{gap:clamp(12px,1.7vw,20px)!important}
+#product-care .care-visual{
+  border-color:var(--vh-white-line)!important;
+  background:var(--vh-glass)!important;
+  box-shadow:var(--vh-shadow)!important;
+  -webkit-backdrop-filter:blur(16px) saturate(125%)!important;
+  backdrop-filter:blur(16px) saturate(125%)!important;
+}
+#product-care .care-detail{padding:clamp(12px,1.7vw,20px)!important;border:0!important;background:transparent!important;box-shadow:none!important}
+#product-care .care-step{border-radius:12px}
+#product-care .care-step.is-active{background:rgba(255,255,255,.08)}
+#product-care .care-thumbnail{background:transparent!important;box-shadow:none!important}
+#product-care .care-thumbnail.is-active{border-color:var(--vh-white-line)!important;background:var(--vh-glass-soft)!important;box-shadow:var(--vh-shadow)!important}
+
+/* The review quote is the primary content; metadata is intentionally quieter. */
+#reviews .customer-review-shell{width:100%;max-width:1120px;padding:0!important;overflow:visible!important}
+#reviews .review-card{background:var(--vh-glass-soft)!important;border-color:var(--vh-soft-line)!important;box-shadow:var(--vh-shadow)!important}
+#reviews .review-card-heading h3,#reviews .review-rating,#reviews .review-author{font-size:11px!important;letter-spacing:.04em!important;opacity:.8}
+#reviews .review-card blockquote{font-size:clamp(15px,1.25vw,18px)!important;line-height:1.35!important}
+#reviews .review-source{font-size:12px!important;opacity:.78}
+
+/* Product discovery is a rail of products, not a bordered section inside a
+   bordered section. */
+#bundle .bundle-shell,#comparison .massager-explore-shell,#loved .community-reels-shell{width:100%!important;max-width:1120px;padding:0!important;overflow:visible!important}
+#bundle .bundle-card,#comparison .massager-explore-card,#loved .community-reel-card{
+  border-color:var(--vh-soft-line)!important;
+  background:var(--vh-glass-soft)!important;
+  box-shadow:var(--vh-shadow)!important;
+}
+#bundle .bundle-viewport,#loved .community-reel-viewport{margin-top:0!important}
+#comparison .massager-explore-grid{gap:clamp(10px,1.2vw,14px)!important}
+
+/* FAQs remain compact disclosure rows rather than large cards. */
+#review-center .faq-shell-custom{width:100%;max-width:900px;padding:0!important}
+#review-center .faq-list{gap:8px!important}
+#review-center .faq-list details{border-color:var(--vh-soft-line)!important;background:rgba(255,255,255,.07)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.16)!important}
+#review-center .faq-list summary{min-height:56px!important;font-size:16px!important}
+
+/* Shared focus treatment preserves keyboard use without adding extra chrome. */
+#bundle :is(button,a):focus-visible,
+#comparison a:focus-visible,
+#loved :is(button,[role="button"]):focus-visible,
+#product-care button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+@media (max-width:820px){
+  .section-pad{padding-block:clamp(22px,6vw,34px)!important}
+  #how-to-use .how-use-content.how-use-stage{grid-template-columns:1fr;gap:14px}
+  #how-to-use .how-video-stage{width:min(100%,350px)!important;max-width:350px}
+  #how-to-use .how-callout-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  #how-to-use .how-mode-card,#how-to-use .how-mode-one,#how-to-use .how-mode-two,#how-to-use .how-mode-three{
+    min-height:88px!important;
+    grid-template-columns:1fr;
+    gap:4px!important;
+    justify-items:center;
+    padding:8px 5px!important;
+    text-align:center!important;
+  }
+  #how-to-use .how-mode-copy{text-align:center!important;justify-items:center}
+  #how-to-use .how-mode-copy small{font-size:7px!important;letter-spacing:.045em!important}
+  #how-to-use .how-mode-copy strong{font-size:12px!important;overflow-wrap:anywhere}
+  #how-to-use .how-mode-number{width:26px!important;height:26px!important;font-size:9px!important}
+  #indulge .bold-shell{grid-template-columns:1fr;gap:14px}
+  #indulge .bold-copy{text-align:center}
+  #indulge .bold-copy h2{max-width:18ch;margin-inline:auto}
+  #indulge .bold-gallery-item:first-child{transform:none}
+  #specifications .walkthrough-grid{display:flex!important;gap:10px!important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:1px 0 12px!important}
+  #specifications .walkthrough-grid::-webkit-scrollbar{display:none}
+  #specifications .walkthrough-card{flex:0 0 min(78vw,310px);min-height:320px!important;scroll-snap-align:start}
+  #specifications .walkthrough-facts{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:0!important}
+  #specifications .walkthrough-facts>div{padding:10px 6px!important}
+  #product-care .care-story{grid-template-columns:1fr!important;grid-template-areas:"visual" "detail" "steps" "thumbs"!important}
+  #product-care .care-stepper{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:none;padding:0!important}
+  #product-care .care-stepper::before{display:none}
+  #product-care .care-step{grid-template-columns:1fr;gap:4px;justify-items:center;padding:6px 2px;text-align:center}
+  #product-care .care-step b{font-size:8px!important;letter-spacing:.04em!important}
+  #product-care .care-step span{width:30px!important;height:30px!important;font-size:9px!important}
+  #product-care .care-detail{gap:12px!important;padding:0 2px!important;text-align:center}
+  #product-care .care-controls{justify-content:center}
+  #bundle .bundle-card{flex-basis:min(72vw,264px)!important;width:min(72vw,264px)!important}
+  #comparison .massager-explore-card{flex-basis:min(72vw,264px)!important}
+  #loved .community-reel-card{flex-basis:min(52vw,204px)!important;width:min(52vw,204px)!important}
+}
+
+@media (max-width:430px){
+  .section-pad{padding-inline:16px!important}
+  #how-to-use .how-use-intro h2,#specifications .specifications-heading h2,#product-care .product-care-heading h2,#reviews .review-heading h2,#bundle .section-heading-block h2,#comparison .massager-explore-heading h2,#loved .community-reels-heading h2,#review-center .section-heading-block h2{font-size:clamp(28px,8vw,34px)!important}
+  #how-to-use .how-video-stage{width:min(100%,320px)!important}
+  #how-to-use .how-mode-card,#how-to-use .how-mode-one,#how-to-use .how-mode-two,#how-to-use .how-mode-three{min-height:78px!important;border-radius:13px!important}
+  #how-to-use .how-mode-copy small{font-size:6.5px!important}
+  #how-to-use .how-mode-copy strong{font-size:10px!important}
+  #specifications .walkthrough-card{flex-basis:78vw;min-height:300px!important}
+  #product-care .care-visual{border-radius:18px!important}
+  #reviews .review-card{border-radius:18px!important}
+  #bundle .bundle-card{flex-basis:70vw!important;width:70vw!important}
+  #comparison .massager-explore-card{flex-basis:74vw!important}
+  #loved .community-reel-card{flex-basis:50vw!important;width:50vw!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #how-to-use .how-mode-card,#indulge .bold-gallery-item,#specifications .walkthrough-card{transition:none!important;animation:none!important}
+}
+
+/* Final material pass: cards read as light-catching glass rather than dark
+   rectangular panels. Section shells remain open, so the page keeps a fluid
+   product-led rhythm instead of becoming a stack of boxed modules. */
+:root{
+  --vh-glass-bright:linear-gradient(135deg,rgba(255,255,255,.30) 0%,rgba(255,255,255,.13) 31%,rgba(186,210,255,.13) 66%,rgba(188,150,255,.20) 100%);
+  --vh-glass-bright-soft:linear-gradient(145deg,rgba(255,255,255,.23) 0%,rgba(190,217,255,.11) 43%,rgba(181,133,255,.17) 100%);
+  --vh-glass-edge:rgba(255,255,255,.83);
+  --vh-glass-glow:0 22px 48px rgba(4,10,78,.18),0 0 30px rgba(255,255,255,.15),inset 0 1px 0 rgba(255,255,255,.82),inset 0 -1px 0 rgba(191,219,255,.16);
+}
+
+@keyframes premium-glass-sheen{
+  0%,15%{transform:translateX(-155%) skewX(-18deg);opacity:0}
+  24%{opacity:.78}
+  44%{transform:translateX(160%) skewX(-18deg);opacity:.3}
+  45%,100%{transform:translateX(160%) skewX(-18deg);opacity:0}
+}
+
+/* Only interactive or content-bearing surfaces receive a glass treatment.
+   The card group is deliberately scoped; decorative wrappers stay clear. */
+#how-to-use .how-video-stage,
+#specifications .walkthrough-card,
+#product-care .care-visual,
+#product-care .care-thumbnail.is-active,
+#reviews .review-card,
+#bundle .bundle-card,
+#comparison .massager-explore-card,
+#loved .community-reel-card,
+#review-center .faq-list details,
+#features .feature-motion-card,
+#features .feature-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  border:1px solid var(--vh-glass-edge)!important;
+  background:var(--vh-glass-bright-soft)!important;
+  box-shadow:var(--vh-glass-glow)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(165%) brightness(1.10)!important;
+  backdrop-filter:blur(26px) saturate(165%) brightness(1.10)!important;
+}
+
+/* Softer colour-tinted glass keeps the How to Use tabs recognisably yellow
+   while removing the heavy opaque button-block treatment. */
+#how-to-use .how-mode-card,
+#how-to-use .how-mode-one,
+#how-to-use .how-mode-two,
+#how-to-use .how-mode-three{
+  position:relative!important;
+  isolation:isolate;
+  overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.9)!important;
+  background:linear-gradient(135deg,rgba(255,237,117,.88),rgba(255,185,43,.72))!important;
+  box-shadow:0 16px 32px rgba(5,13,72,.15),inset 0 1px 0 rgba(255,255,255,.86),inset 0 -1px 0 rgba(144,74,0,.13)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(155%)!important;
+  backdrop-filter:blur(20px) saturate(155%)!important;
+}
+
+/* The moving highlight is a material reflection, not another frame. */
+#how-to-use .how-video-stage::after,
+#how-to-use .how-mode-card::before,
+#specifications .walkthrough-card::after,
+#product-care .care-visual::after,
+#product-care .care-thumbnail.is-active::after,
+#reviews .review-card::before,
+#bundle .bundle-card::before,
+#comparison .massager-explore-card::before,
+#loved .community-reel-card::before,
+#review-center .faq-list details::before,
+#features .feature-motion-card::before,
+#features .feature-card::before{
+  content:""!important;
+  position:absolute!important;
+  z-index:0!important;
+  top:-25%!important;
+  bottom:-25%!important;
+  left:0!important;
+  width:32%!important;
+  pointer-events:none!important;
+  opacity:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.08) 21%,rgba(255,255,255,.72) 50%,rgba(255,255,255,.11) 79%,transparent 100%)!important;
+  filter:blur(4px)!important;
+  animation:premium-glass-sheen 7.6s cubic-bezier(.22,.61,.36,1) infinite!important;
+}
+
+/* Keep real content above the reflection layer. */
+#how-to-use .how-video-stage>* ,
+#how-to-use .how-mode-card>* ,
+#specifications .walkthrough-card>* ,
+#product-care .care-visual>* ,
+#product-care .care-thumbnail.is-active>* ,
+#reviews .review-card>* ,
+#bundle .bundle-card>* ,
+#comparison .massager-explore-card>.massager-explore-media,
+#comparison .massager-explore-card>.massager-explore-copy,
+#loved .community-reel-card>* ,
+#review-center .faq-list details>* ,
+#features .feature-motion-card>* ,
+#features .feature-card>*{position:relative;z-index:1}
+
+/* A thin white horizon line carries the glass edge without adding a box. */
+#how-to-use .how-video-stage,
+#specifications .walkthrough-card,
+#product-care .care-visual,
+#reviews .review-card,
+#bundle .bundle-card,
+#comparison .massager-explore-card,
+#loved .community-reel-card,
+#features .feature-motion-card,
+#features .feature-card{background-image:linear-gradient(90deg,transparent 7%,rgba(255,255,255,.88) 25%,rgba(255,255,255,.12) 72%,transparent 94%),var(--vh-glass-bright-soft)!important;background-size:100% 1px,100% 100%!important;background-repeat:no-repeat!important}
+
+/* Let the visual modules breathe: the shell is open and the media becomes
+   the focal point, with supporting cards intentionally lighter. */
+#features .feature-shell,
+#features .feature-layout,
+#specifications .walkthrough-grid,
+#product-care .care-story,
+#bundle .bundle-viewport,
+#comparison .massager-explore-grid,
+#loved .community-reel-viewport{isolation:isolate}
+
+#features .feature-card{border-radius:18px 28px 18px 28px!important}
+#specifications .walkthrough-card{border-radius:26px 26px 16px 26px!important}
+#product-care .care-visual{border-radius:28px 28px 18px 28px!important}
+#reviews .review-card{border-radius:18px 24px 18px 24px!important}
+#bundle .bundle-card,#comparison .massager-explore-card{border-radius:24px 24px 16px 24px!important}
+
+#loved .community-reel-card.is-centred,
+#bundle .bundle-card.is-centred,
+#features .feature-card.is-centred{
+  border-color:#fff!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.65),0 0 34px rgba(235,232,255,.42),0 24px 50px rgba(3,9,75,.22),inset 0 1px 0 rgba(255,255,255,.92)!important;
+}
+
+/* Preserve the existing reel readability overlay while adding the reflection. */
+#loved .community-reel-card video{position:relative;z-index:0!important}
+#loved .community-reel-card::before,#loved .community-reel-card::after{z-index:1!important}
+#loved .community-reel-card .community-reel-meta,
+#loved .community-reel-card .community-reel-play{position:relative;z-index:2!important}
+
+@media (max-width:820px){
+  #how-to-use .how-video-stage,
+  #specifications .walkthrough-card,
+  #product-care .care-visual,
+  #reviews .review-card,
+  #bundle .bundle-card,
+  #comparison .massager-explore-card,
+  #loved .community-reel-card,
+  #features .feature-motion-card,
+  #features .feature-card{box-shadow:0 15px 32px rgba(4,10,78,.16),0 0 20px rgba(255,255,255,.12),inset 0 1px 0 rgba(255,255,255,.74),inset 0 -1px 0 rgba(191,219,255,.13)!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #how-to-use .how-video-stage::after,
+  #how-to-use .how-mode-card::before,
+  #specifications .walkthrough-card::after,
+  #product-care .care-visual::after,
+  #product-care .care-thumbnail.is-active::after,
+  #reviews .review-card::before,
+  #bundle .bundle-card::before,
+  #comparison .massager-explore-card::before,
+  #loved .community-reel-card::before,
+  #review-center .faq-list details::before,
+  #features .feature-motion-card::before,
+  #features .feature-card::before{animation:none!important}
+}
+
+/* How to Use — integrated video dock, matched to the approved reference. */
+#how-to-use{overflow:clip!important}
+#how-to-use .how-use-shell{
+  position:relative!important;isolation:isolate;
+  width:min(100%,1120px)!important;max-width:1120px!important;
+  padding:clamp(22px,3vw,38px)!important;overflow:hidden!important;
+  border:0!important;
+  border-radius:clamp(24px,2.5vw,36px)!important;
+  background:radial-gradient(circle at 18% 18%,rgba(34,211,255,.16),transparent 31%),radial-gradient(circle at 84% 16%,rgba(172,76,255,.28),transparent 36%),linear-gradient(145deg,rgba(9,38,174,.38),rgba(89,39,186,.34))!important;
+  box-shadow:0 18px 48px rgba(4,11,78,.18)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(145%)!important;backdrop-filter:blur(18px) saturate(145%)!important;
+}
+#how-to-use .how-use-shell::before,#how-to-use .how-use-shell::after{content:none!important}
+#how-to-use .how-use-intro{
+  display:grid!important;justify-items:center;gap:8px!important;
+  margin:0 auto clamp(18px,2.2vw,28px)!important;text-align:center!important;
+}
+#how-to-use .how-use-intro .eyebrow{
+  display:block!important;margin:0!important;color:#d8f6ff!important;
+  font-size:clamp(10px,.82vw,13px)!important;font-weight:700!important;
+  letter-spacing:.32em!important;line-height:1.1!important;text-align:center!important;
+}
+#how-to-use .how-use-intro h2{
+  width:auto!important;max-width:100%;margin:0!important;
+  font-size:clamp(38px,4.6vw,64px)!important;line-height:.95!important;
+  text-align:center!important;text-wrap:balance;
+}
+#how-to-use .how-use-content.how-use-stage{
+  display:block!important;min-height:0!important;padding:0!important;overflow:visible!important;
+}
+#how-to-use .how-video-stage{
+  position:relative!important;isolation:isolate;
+  width:min(100%,980px)!important;max-width:980px!important;height:auto!important;
+  aspect-ratio:16/9!important;margin-inline:auto!important;overflow:hidden!important;
+  border:1px solid rgba(142,218,255,.5)!important;
+  border-radius:clamp(20px,2.2vw,32px)!important;background:#22117f!important;
+  box-shadow:0 20px 48px rgba(4,11,78,.26)!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+}
+#how-to-use .how-video-stage::after{
+  content:""!important;position:absolute!important;z-index:1!important;
+  inset:auto 0 0!important;width:auto!important;height:39%!important;
+  opacity:1!important;pointer-events:none!important;
+  background:linear-gradient(180deg,transparent 0%,rgba(9,10,76,.18) 42%,rgba(8,8,63,.62) 100%)!important;
+  filter:none!important;transform:none!important;animation:none!important;
+}
+#how-to-use .how-use-video{
+  position:absolute!important;z-index:0!important;inset:0!important;display:block!important;
+  width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;
+  object-fit:cover!important;object-position:center 47%!important;
+  border:0!important;border-radius:inherit!important;background:#22117f!important;
+  box-shadow:none!important;transform:translateZ(0);
+}
+#how-to-use .how-callout-grid{
+  position:absolute!important;z-index:4!important;
+  inset:auto 50% clamp(14px,2vw,24px) auto!important;
+  display:flex!important;width:min(58%,560px)!important;height:auto!important;
+  min-height:76px;align-items:stretch!important;gap:8px!important;padding:8px!important;
+  overflow:hidden!important;border:1px solid rgba(255,255,255,.88)!important;border-radius:999px!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.27),rgba(198,179,255,.17) 54%,rgba(42,25,123,.28))!important;
+  box-shadow:0 12px 34px rgba(5,8,61,.3),inset 0 1px 0 rgba(255,255,255,.68)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(165%)!important;backdrop-filter:blur(24px) saturate(165%)!important;
+  pointer-events:auto!important;transform:translateX(50%)!important;
+}
+#how-to-use .how-callout-grid::before{
+  content:"";position:absolute;z-index:0;top:0;left:9%;width:82%;height:2px;
+  border-radius:999px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),rgba(255,225,78,.85),transparent);
+  box-shadow:0 0 14px rgba(255,255,255,.55);pointer-events:none;
+}
+#how-to-use .how-mode-card,#how-to-use .how-mode-one,#how-to-use .how-mode-two,#how-to-use .how-mode-three{
+  position:relative!important;inset:auto!important;display:grid!important;
+  width:52px!important;min-width:52px!important;min-height:58px!important;
+  grid-template-columns:1fr!important;align-items:center!important;justify-items:center!important;
+  gap:0!important;flex:0 0 52px!important;padding:5px!important;overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.9)!important;border-radius:999px!important;
+  background:linear-gradient(135deg,rgba(255,236,102,.92),rgba(255,188,38,.82))!important;
+  color:#07155d!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 5px 16px rgba(7,13,68,.18)!important;
+  text-align:left!important;transform:none!important;
+  transition:flex-basis .42s cubic-bezier(.2,.8,.2,1),width .42s cubic-bezier(.2,.8,.2,1),background .3s ease,box-shadow .3s ease!important;
+}
+#how-to-use .how-mode-card::before,#how-to-use .how-mode-card::after{content:none!important}
+#how-to-use .how-mode-card.is-active{
+  width:auto!important;min-width:0!important;
+  grid-template-columns:42px minmax(0,1fr)!important;justify-items:stretch!important;
+  gap:10px!important;flex:1 1 260px!important;padding:7px 16px 7px 8px!important;
+  background:linear-gradient(135deg,rgba(255,244,137,.97),rgba(255,205,67,.91))!important;
+  box-shadow:0 0 0 1px rgba(255,233,104,.58),0 0 24px rgba(255,214,66,.42),inset 0 1px 0 rgba(255,255,255,.92)!important;
+  transform:none!important;opacity:1!important;animation:none!important;
+}
+#how-to-use .how-mode-card:hover,#how-to-use .how-mode-card:focus-visible{
+  border-color:#fff!important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.34),0 0 22px rgba(255,218,65,.34),inset 0 1px 0 rgba(255,255,255,.9)!important;
+  transform:none!important;
+}
+#how-to-use .how-mode-card:focus-visible{outline:2px solid #fff!important;outline-offset:2px!important}
+#how-to-use .how-mode-number{
+  display:grid!important;width:42px!important;height:42px!important;place-items:center!important;
+  border:1px solid rgba(255,255,255,.88)!important;border-radius:50%!important;
+  background:rgba(255,249,190,.66)!important;color:#bd1670!important;
+  box-shadow:0 0 14px rgba(255,229,93,.34)!important;
+  font-size:13px!important;font-weight:900!important;line-height:1!important;
+}
+#how-to-use .how-mode-copy{
+  display:none!important;min-width:0;align-content:center;gap:1px!important;
+  text-align:left!important;opacity:0;
+}
+#how-to-use .how-mode-card.is-active .how-mode-copy{
+  display:grid!important;opacity:1!important;transform:none!important;animation:none!important;
+}
+#how-to-use .how-mode-copy small{
+  color:#07155d!important;font-size:10px!important;font-weight:900!important;
+  letter-spacing:.04em!important;line-height:1.05!important;white-space:nowrap;
+}
+#how-to-use .how-mode-copy strong{
+  color:#07155d!important;font-size:15px!important;line-height:1.08!important;white-space:nowrap;
+}
+#how-to-use .how-mode-copy>span,#how-to-use .how-mode-icon,#how-to-use .how-step-progress{display:none!important}
+@keyframes how-dock-copy-in{
+  from{opacity:0;transform:translateX(-6px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@media(max-width:820px){
+  #how-to-use .how-use-shell{width:100%!important;padding:20px 14px!important;border-radius:26px!important}
+  #how-to-use .how-use-intro{gap:6px!important;margin-bottom:16px!important}
+  #how-to-use .how-use-intro h2{font-size:clamp(31px,9vw,42px)!important;line-height:.95!important}
+  #how-to-use .how-video-stage{
+    width:min(100%,350px)!important;max-width:350px!important;
+    aspect-ratio:4/5!important;border-radius:24px!important;
+  }
+  #how-to-use .how-use-video{object-position:center 48%!important}
+  #how-to-use .how-callout-grid{
+    bottom:12px!important;width:calc(100% - 20px)!important;
+    min-height:64px;gap:5px!important;padding:6px!important;
+  }
+  #how-to-use .how-mode-card,#how-to-use .how-mode-one,#how-to-use .how-mode-two,#how-to-use .how-mode-three{
+    width:44px!important;min-width:44px!important;min-height:50px!important;
+    flex:0 0 44px!important;padding:4px!important;
+  }
+  #how-to-use .how-mode-card.is-active{
+    width:auto!important;min-width:0!important;
+    grid-template-columns:36px minmax(0,1fr)!important;
+    gap:7px!important;flex:1 1 190px!important;padding:5px 10px 5px 6px!important;
+  }
+  #how-to-use .how-mode-number{width:36px!important;height:36px!important;font-size:11px!important}
+  #how-to-use .how-mode-copy small{font-size:8px!important;letter-spacing:.02em!important}
+  #how-to-use .how-mode-copy strong{font-size:12px!important}
+}
+@media(max-width:430px){
+  #how-to-use .how-use-shell{padding:17px 10px!important;border-radius:22px!important}
+  #how-to-use .how-use-intro{margin-bottom:14px!important}
+  #how-to-use .how-use-intro .eyebrow{font-size:9px!important;letter-spacing:.26em!important}
+  #how-to-use .how-use-intro h2{font-size:clamp(28px,8.8vw,36px)!important}
+  #how-to-use .how-video-stage{
+    width:min(100%,326px)!important;max-width:326px!important;
+    aspect-ratio:3/4!important;border-radius:21px!important;
+  }
+  #how-to-use .how-callout-grid{
+    bottom:10px!important;width:calc(100% - 16px)!important;
+    min-height:58px;gap:4px!important;padding:5px!important;
+  }
+  #how-to-use .how-mode-card,#how-to-use .how-mode-one,#how-to-use .how-mode-two,#how-to-use .how-mode-three{
+    width:40px!important;min-width:40px!important;min-height:46px!important;flex-basis:40px!important;
+  }
+  #how-to-use .how-mode-card.is-active{
+    grid-template-columns:32px minmax(0,1fr)!important;
+    gap:6px!important;flex-basis:168px!important;padding:5px 8px 5px 5px!important;
+  }
+  #how-to-use .how-mode-number{width:32px!important;height:32px!important;font-size:10px!important}
+  #how-to-use .how-mode-copy small{font-size:7px!important}
+  #how-to-use .how-mode-copy strong{font-size:11px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #how-to-use .how-mode-card,#how-to-use .how-mode-card.is-active .how-mode-copy{animation:none!important;transition:none!important}
+}
+
+/* Border cleanup — retain transparent glass depth without white glowing rims. */
+:root{
+  --vh-glass-edge:rgba(126,190,255,.34);
+  --vh-white-line:rgba(134,201,255,.34);
+  --vh-soft-line:rgba(137,181,255,.28);
+  --vh-glass-glow:0 18px 42px rgba(5,13,78,.2),inset 0 1px 0 rgba(154,202,255,.16),inset 0 -1px 0 rgba(132,96,224,.12);
+}
+.main-media-card,
+.thumb,
+.purchase-card,
+.trust-assurance-card,
+#how-to-use .how-video-stage,
+#how-to-use .how-callout-grid,
+#features .feature-motion-card,
+#features .feature-card,
+#specifications .walkthrough-card,
+#product-care .care-visual,
+#product-care .care-thumbnail,
+#reviews .review-card,
+#bundle .bundle-card,
+#comparison .massager-explore-card,
+#loved .community-reel-card,
+#review-center .faq-list details{
+  border-color:rgba(132,190,255,.34)!important;
+  box-shadow:0 16px 38px rgba(4,13,78,.2),inset 0 1px 0 rgba(151,202,255,.15)!important;
+}
+#how-to-use .how-mode-card,
+#how-to-use .how-mode-one,
+#how-to-use .how-mode-two,
+#how-to-use .how-mode-three{
+  border-color:rgba(255,215,70,.58)!important;
+  box-shadow:0 6px 18px rgba(6,12,68,.2),inset 0 1px 0 rgba(255,242,167,.45)!important;
+}
+#how-to-use .how-mode-card.is-active{
+  border-color:rgba(255,218,67,.72)!important;
+  box-shadow:0 10px 24px rgba(6,12,68,.22),0 0 18px rgba(255,205,55,.2),inset 0 1px 0 rgba(255,242,167,.5)!important;
+}
+#specifications .walkthrough-card,
+#product-care .care-visual,
+#reviews .review-card,
+#bundle .bundle-card,
+#comparison .massager-explore-card,
+#loved .community-reel-card,
+#features .feature-motion-card,
+#features .feature-card{
+  background-image:var(--vh-glass-bright-soft)!important;
+  background-size:100% 100%!important;
+}
+#loved .community-reel-card.is-centred,
+#bundle .bundle-card.is-centred,
+#features .feature-card.is-centred{
+  border-color:rgba(142,196,255,.42)!important;
+  box-shadow:0 20px 44px rgba(3,9,75,.23),inset 0 1px 0 rgba(152,205,255,.18)!important;
+}

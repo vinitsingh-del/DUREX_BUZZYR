@@ -1,0 +1,13 @@
+/* Approved feature-card Option 1, scoped to product-story only. */
+#product-story .story-card{background:linear-gradient(145deg,#260b80,#260875)!important;border:1px solid #9b7bd1!important;border-radius:18px!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;padding:10px!important}
+#product-story .usp-photo{width:100%;height:auto!important;aspect-ratio:354/228;border-radius:13px!important}
+#product-story .usp-photo img{object-position:center!important;object-fit:cover!important}
+#product-story .story-card-copy{padding:10px 2px 12px;display:flex;flex-direction:column;gap:8px}
+#product-story .feature-line-icon{display:block;width:34px;height:34px;color:#ffde00;margin:0}
+#product-story .feature-line-icon svg{display:block;width:100%;height:100%}
+#product-story .story-card h3{margin:0;min-height:36px;color:#fff}
+#product-story .story-card p{margin:0;color:#dfd2f4!important}
+@media(max-width:700px){#product-story .story-card{flex-basis:78%!important}#product-story .story-card h3{font-size:16px}#product-story .story-card p{font-size:13px}}
+
+#product-story .story-heading{text-align:center!important}
+#product-story #productStoryTitle{width:100%;max-width:none;margin-inline:auto;text-align:center!important}
