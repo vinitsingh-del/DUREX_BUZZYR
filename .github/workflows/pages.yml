@@ -28,3 +28,5 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify the public Ride and Vibe website
+        run: python3 .github/scripts/verify-ride-vibe.py
